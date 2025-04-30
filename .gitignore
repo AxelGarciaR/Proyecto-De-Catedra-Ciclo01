@@ -1,1 +1,40 @@
 .vs/
+
+# Carpeta de compilación
+bin/
+obj/
+
+# Archivos generados por Visual Studio
+*.suo
+*.user
+*.sln.docstates
+*.csproj.user
+*.vs/
+*.xaml.cs
+*.g.cs
+*.designer.cs
+*. AssemblyInfo.cs
+*.licenses.licx
+*.resources
+
+# Archivos de caché de recursos
+*.csproj.GenerateResource.cache
+
+# Paquetes NuGet
+packages/
+
+# Archivos de salida de compilación
+*.exe
+*.dll
+*.pdb
+*.vsix
+*.appx
+*.appxbundle
+*.psmdcp
+*.testsettings
+*.runsettings
+/publish/
+
+# Archivos temporales del sistema operativo
+[Tt]humbs.db
+*.DS_Store
