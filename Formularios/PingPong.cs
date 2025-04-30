@@ -16,5 +16,45 @@ namespace PingPong_Generacion_de_figuras_Grupo3
         {
             InitializeComponent();
         }
+
+        private void lbReanudar_MouseHover(object sender, EventArgs e)
+        {
+            PbRean.Visible = true;
+        }
+
+        private void lbReanudar_MouseLeave(object sender, EventArgs e)
+        {
+            PbRean.Visible = false;
+        }
+
+        private void LbReiniciar_MouseHover(object sender, EventArgs e)
+        {
+            PbReini.Visible = true;
+        }
+
+        private void LbReiniciar_MouseLeave(object sender, EventArgs e)
+        {
+            PbReini.Visible = false;
+        }
+
+        private void LbSalir_MouseHover(object sender, EventArgs e)
+        {
+            PbSalir.Visible = true;
+        }
+
+        private void LbSalir_MouseLeave(object sender, EventArgs e)
+        {
+            PbSalir.Visible = false;
+        }
+
+        private void LbSalirAlmenu_MouseHover(object sender, EventArgs e)
+        {
+            PbMenu.Visible = true;
+        }
+
+        private void LbSalirAlmenu_MouseLeave(object sender, EventArgs e)
+        {
+            PbMenu.Visible = false;
+        }
     }
 }

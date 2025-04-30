@@ -105,6 +105,7 @@
             this.pbSelect1.TabIndex = 4;
             this.pbSelect1.TabStop = false;
             this.pbSelect1.Visible = false;
+            this.pbSelect1.Click += new System.EventHandler(this.pbSelect1_Click);
             // 
             // pbSelect2
             // 

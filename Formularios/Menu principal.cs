@@ -56,5 +56,10 @@ namespace PingPong_Generacion_de_figuras_Grupo3
         {
             pbSelect4.Visible = false;
         }
+
+        private void pbSelect1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
