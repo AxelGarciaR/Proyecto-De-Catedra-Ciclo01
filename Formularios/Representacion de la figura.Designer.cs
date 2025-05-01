@@ -2885,6 +2885,7 @@
             this.Name = "RepresentacionFigura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RepresentacionFigura";
+            this.Load += new System.EventHandler(this.RepresentacionFigura_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

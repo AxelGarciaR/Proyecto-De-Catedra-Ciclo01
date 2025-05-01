@@ -16,5 +16,17 @@ namespace PingPong_Generacion_de_figuras_Grupo3
         {
             InitializeComponent();
         }
+
+        private void RepresentacionFigura_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        /*
+        
+            Recibir el codigo de la cadena para activar los checkbox elegidos
+
+         */
+
     }
 }

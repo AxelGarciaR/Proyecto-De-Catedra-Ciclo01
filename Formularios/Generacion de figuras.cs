@@ -16,5 +16,16 @@ namespace PingPong_Generacion_de_figuras_Grupo3
         {
             InitializeComponent();
         }
+
+        private void GeneracionFiguras_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        /*
+        
+        Utilizar las cadenas que genere de 01 de generar figura 
+
+         */
     }
 }

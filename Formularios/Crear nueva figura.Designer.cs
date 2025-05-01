@@ -1,4 +1,4 @@
-﻿namespace PingPong_Generacion_de_figuras_Grupo3
+﻿namespace MatrizLED
 {
     partial class CrearNuevaFigura
     {
@@ -2885,6 +2885,7 @@
             this.MinimizeBox = false;
             this.Name = "CrearNuevaFigura";
             this.Text = "Crear nueva figura";
+            this.Load += new System.EventHandler(this.CrearNuevaFigura_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

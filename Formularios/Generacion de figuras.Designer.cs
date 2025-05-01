@@ -203,7 +203,7 @@
             this.btnCambiarColor.Name = "btnCambiarColor";
             this.btnCambiarColor.Size = new System.Drawing.Size(117, 45);
             this.btnCambiarColor.TabIndex = 23;
-            this.btnCambiarColor.Text = "Crear gato";
+            this.btnCambiarColor.Text = "Crear figura";
             this.btnCambiarColor.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -244,6 +244,7 @@
             this.MinimizeBox = false;
             this.Name = "GeneracionFiguras";
             this.Text = "Generacion de figuras";
+            this.Load += new System.EventHandler(this.GeneracionFiguras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tckbarBrillo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

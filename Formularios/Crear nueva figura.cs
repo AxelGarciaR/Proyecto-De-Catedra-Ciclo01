@@ -61,5 +61,16 @@ namespace MatrizLED
             matriz[3, 5].Checked = true;
             matriz[4, 5].Checked = true;
         }
+
+        private void CrearNuevaFigura_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        /*
+            
+        Empezar a configurar este para hacer las demas figuras para agarrarlo de base para poder hacers las demas figuras
+
+         */
     }
 }
