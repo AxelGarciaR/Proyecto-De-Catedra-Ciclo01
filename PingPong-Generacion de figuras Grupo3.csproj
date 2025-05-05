@@ -52,6 +52,18 @@
     <Compile Include="Formularios\Crear nueva figura.Designer.cs">
       <DependentUpon>Crear nueva figura.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\PingPongMenuP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PingPongMenuP.Designer.cs">
+      <DependentUpon>PingPongMenuP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\PingPong tablero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\PingPong tablero.Designer.cs">
+      <DependentUpon>PingPong tablero.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\PingPong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +92,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\Crear nueva figura.resx">
       <DependentUpon>Crear nueva figura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PingPongMenuP.resx">
+      <DependentUpon>PingPongMenuP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\PingPong tablero.resx">
+      <DependentUpon>PingPong tablero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\PingPong.resx">
       <DependentUpon>PingPong.cs</DependentUpon>

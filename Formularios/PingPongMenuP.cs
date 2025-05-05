@@ -11,9 +11,9 @@ using PingPong_Generacion_de_figuras_Grupo3.Formularios;
 
 namespace PingPong_Generacion_de_figuras_Grupo3
 {
-    public partial class PingPong : Form
+    public partial class PingPongMenuP : Form
     {
-        public PingPong()
+        public PingPongMenuP()
         {
             InitializeComponent();
         }
@@ -38,6 +38,16 @@ namespace PingPong_Generacion_de_figuras_Grupo3
             PbReini.Visible = false;
         }
 
+        private void LbSalir_MouseHover(object sender, EventArgs e)
+        {
+            PbSalir.Visible = true;
+        }
+
+        private void LbSalir_MouseLeave(object sender, EventArgs e)
+        {
+            PbSalir.Visible = false;
+        }
+
         private void LbSalirAlmenu_MouseHover(object sender, EventArgs e)
         {
             PbMenu.Visible = true;
@@ -48,28 +58,22 @@ namespace PingPong_Generacion_de_figuras_Grupo3
             PbMenu.Visible = false;
         }
 
-        private void LbReanudar_Click(object sender, EventArgs e)
+        private void lbIniciarPingPong_Click(object sender, EventArgs e)
         {
-            PingPongGame tableroJuego = new PingPongGame();
-            tableroJuego.Show();
+            PingPongGame juego = new PingPongGame();
+            juego.Show();
             this.Hide();
+
         }
 
-        private void LbSalir_Click(object sender, EventArgs e)
+        private void PingPongMenuP_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbSalirAplicacion_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void LbSalirAlmenu_Click(object sender, EventArgs e)
-        {
-            PingPongMenuP irMenu = new PingPongMenuP();
-            irMenu.Show();
-            this.Hide();
-        }
-
-        private void PingPong_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
