@@ -20,10 +20,11 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
         }
 
         //Variables base
-        int velocidad = 5; //Velocidad base de la pelota 
+        int velocidad = 20; //Velocidad base de la pelota 
         int contador = 0; //Contador de puntos totales
         int puntajeJugador1 = 0; //Contador para llevar el puntaje del jugador 1
         int puntajeJugador2 = 0; //Contador para llevar el puntaje del jugador 2
+        int contadorRebotes = 0; //Contador para llevar los rebotes en las paletas de los jugadores
 
         //Variables para comportamiento de pelota
         bool arriba;
@@ -31,9 +32,35 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 
         private void PingPongGame_Load(object sender, EventArgs e)
         {
+
+            ramdomizarNumero();
+
+            //Activa el timer
+            timerPingPong.Enabled = true;
+            puntajeJugador1 = 0;
+            puntajeJugador2 = 0;
+            lbPuntaje1.Text = puntajeJugador1.ToString(); 
+            lbPuntaje2.Text = puntajeJugador2.ToString(); 
+        }
+
+        private void ReiniciarJuegoAnotar() {
+
+            pbxPelota.Location = new Point(300, 176);
+            pbxJugador1.Location = new Point(12, 150);
+            pbxJugador2.Location = new Point(618, 150);
+
+            ramdomizarNumero();
+
+            timerPingPong.Enabled = true;
+
+        }
+
+        private void ramdomizarNumero() {
+
             //Hacerlo de manera aleatoria para que al inicio la pelota se mueva a la izquierda o a la derecha
             Random valoral = new Random();
-            pbxPelota.Location = new Point(300,valoral.Next(this.Height -10));
+
+            pbxPelota.Location = new Point(300, valoral.Next(this.Height - 10));
             //Poner como true arriba y abajo para comparar en las colisiones en los bordes del forumulario
             arriba = true;
 
@@ -44,16 +71,11 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
             {
                 izquierda = true;
             }
-            else { 
-                izquierda= false;
+            else
+            {
+                izquierda = false;
             }
-            
-            //Activa el timer
-            timerPingPong.Enabled = true;
-            puntajeJugador1 = 0;
-            puntajeJugador2 = 0;
-            lbPuntaje1.Text = puntajeJugador1.ToString(); 
-            lbPuntaje2.Text = puntajeJugador2.ToString(); 
+
         }
 
         //Metodo para leer la posicion de los jugadores
@@ -155,6 +177,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
                 PingPong menu = new PingPong();
                 menu.Show();
                 this.Hide();
+                timerPingPong.Enabled = false;
 
             }
             else if (e.KeyCode == Keys.W)
@@ -184,31 +207,64 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 
         private void pbxJugador2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void timerPingPong_Tick(object sender, EventArgs e)
         {
             //Control de puntaje
-            if (pbxPelota.Left > pbxJugador2.Left) {
+            if (pbxPelota.Left > pbxJugador2.Left)
+            {
 
                 timerPingPong.Enabled = false;
-                MessageBox.Show("Jugador 1 ha anotado " + puntajeJugador1.ToString() + " veces!");
                 puntajeJugador1 = puntajeJugador1 + 1;
-                velocidad = 5;
-                contador = contador++;
                 lbPuntaje1.Text = puntajeJugador1.ToString();
-                
+                MessageBox.Show("Jugador 1 ha anotado " + puntajeJugador1.ToString() + " veces!");
+                velocidad = 20;
+                contador = contador++;
+                ReiniciarJuegoAnotar();
 
             }
-            else if (pbxPelota.Left < pbxJugador1.Left) {
+            else if (pbxPelota.Left < pbxJugador1.Left)
+            {
 
                 timerPingPong.Enabled = false;
-                MessageBox.Show("Jugador 2 ha anotado " + puntajeJugador2.ToString() + " veces!");
                 puntajeJugador2 = puntajeJugador2 + 1;
-                velocidad = 5;
-                contador = contador++;
                 lbPuntaje2.Text = puntajeJugador2.ToString();
+                MessageBox.Show("Jugador 2 ha anotado " + puntajeJugador2.ToString() + " veces!");
+                velocidad = 20;
+                contador = contador++;
+                ReiniciarJuegoAnotar();
+            }
+
+            // Condiciones para manejar el rebote de la pelota con el jugador 1
+            if (pbxPelota.Left <= pbxJugador1.Left + pbxJugador1.Width && // Verifica si el lado izquierdo de la pelota toca o cruza el lado derecho del jugador 1
+                pbxPelota.Right >= pbxJugador1.Left && // Verifica si el lado derecho de la pelota toca o cruza el lado izquierdo del jugador 1
+                pbxPelota.Bottom >= pbxJugador1.Top && // Verifica si la parte inferior de la pelota toca o está por debajo de la parte superior del jugador 1
+                pbxPelota.Top <= pbxJugador1.Bottom)  // Verifica si la parte superior de la pelota toca o está por encima de la parte inferior del jugador 1
+            {
+                izquierda = true; // La pelota rebota hacia la derecha
+                contadorRebotes += 1;
+                if (contadorRebotes > 5)
+                {
+                    velocidad += 10;
+                    contadorRebotes = 0;
+                }
+            }
+
+            // Condiciones para manejar el rebote de la pelota con el jugador 2
+            if (pbxPelota.Right >= pbxJugador2.Left && // Verifica si el lado derecho de la pelota toca o cruza el lado izquierdo del jugador 2
+                pbxPelota.Left <= pbxJugador2.Right && // Verifica si el lado izquierdo de la pelota toca o cruza el lado derecho del jugador 2
+                pbxPelota.Bottom >= pbxJugador2.Top && // Verifica si la parte inferior de la pelota toca o está por debajo de la parte superior del jugador 2
+                pbxPelota.Top <= pbxJugador2.Bottom)  // Verifica si la parte superior de la pelota toca o está por encima de la parte inferior del jugador 2
+            {
+                izquierda = false; // La pelota rebota hacia la izquierda
+                contadorRebotes += 1;
+                if (contadorRebotes > 5)
+                {
+                    velocidad += 10;
+                    contadorRebotes = 0;
+                }
             }
 
             //Movimiento de la pelota
@@ -233,7 +289,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
                 arriba = false;
 
             }
-            if (pbxPelota.Top <= 0) { 
+            if (pbxPelota.Top <= 0) {
 
                 //Cuando pegue en la pared de arriba se regrese y se mueva hacia abajo
                 arriba = true;
@@ -244,12 +300,14 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
                 izquierda = true;
 
             }
-            if (pbxPelota.Left >= this.Width-10)
+            if (pbxPelota.Left >= this.Width - 10)
             {
                 //Cuando pegue en la pared de la derecha se regrese y se mueva hacia la izquierda
                 izquierda = false;
 
             }
+
+           
 
 
 
