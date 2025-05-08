@@ -44,7 +44,6 @@ C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\bin\Debug\PingPong-Generaci
 C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\bin\Debug\PingPong-Generacion de figuras Grupo3.exe
 C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\bin\Debug\PingPong-Generacion de figuras Grupo3.pdb
 C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.csproj.AssemblyReference.cache
-C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.CrearNuevaFigura.resources
 C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.PingPong.resources
 C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.MenuPrincipal.resources
 C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.GeneracionFiguras.resources
@@ -54,3 +53,6 @@ C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generaci
 C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.csproj.CoreCompileInputs.cache
 C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.exe
 C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.pdb
+C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\MatrizLED.CrearNuevaFigura.resources
+C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.PingPongMenuP.resources
+C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.Formularios.PingPongGame.resources

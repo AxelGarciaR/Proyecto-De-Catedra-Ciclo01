@@ -21,6 +21,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 
         //Variables base
         int velocidad = 20; //Velocidad base de la pelota 
+        private int VelocidadInicial = 20; //Esta variable es para guardar y posteriormente usar el dato de la velocidad inicial 
         int contador = 0; //Contador de puntos totales
         int puntajeJugador1 = 0; //Contador para llevar el puntaje del jugador 1
         int puntajeJugador2 = 0; //Contador para llevar el puntaje del jugador 2
@@ -32,7 +33,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 
         private void PingPongGame_Load(object sender, EventArgs e)
         {
-
+            VelocidadInicial = velocidad; //para guardar la velocidad inicial al iniciar el juego
             ramdomizarNumero();
 
             //Activa el timer
@@ -42,6 +43,32 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
             lbPuntaje1.Text = puntajeJugador1.ToString(); 
             lbPuntaje2.Text = puntajeJugador2.ToString(); 
         }
+
+        // Para pausar el juego
+        private void PausarJuego()
+        {
+            timerPingPong.Stop(); // aqui detenemos el timer
+            velocidad = 0; // para evitar que se mueva la pelota ponemos el valor de velocidad en 0
+
+        }
+        private void ReanudarJuego()
+        {
+            velocidad = VelocidadInicial;
+            timerPingPong.Start();
+        }
+
+        private void ReiniciarJuego()
+        {
+            puntajeJugador1 = 0;
+            puntajeJugador2 = 0;
+            lbPuntaje1.Text = puntajeJugador1.ToString();
+            lbPuntaje2.Text = puntajeJugador2.ToString();
+            contadorRebotes = 0;
+            velocidad = VelocidadInicial;
+            ReiniciarJuegoAnotar();
+        }
+
+
 
         private void ReiniciarJuegoAnotar() {
 
@@ -167,41 +194,66 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
                 pbxJugador2.Location = new Point(x2, nuevaY);
             }
         }
+  
 
         //Evento para leer teclas
         private void PingPongGame_KeyDown(object sender, KeyEventArgs e)
         {
+            // Eventos para leer las teclas del menu de pausa
             if (e.KeyCode == Keys.M)
             {
-
-                PingPong menu = new PingPong();
-                menu.Show();
-                this.Hide();
-                timerPingPong.Enabled = false;
-
+                PausarJuego(); // llamamos el metodo de pausa
+                //lo utilizamos para llamar al pingpong independientemente de lo seleccionado en el menu (a excepcion del salir)
+                using (PingPong menuPausa = new PingPong()) 
+                {
+                    //mostramos el menu de pausa como dialogo y se detiene el juego hasta cerrar el menu
+                    DialogResult resultado = menuPausa.ShowDialog();
+                    // Para evaluar lo que el usuario seleccione en el menu:
+                    //al darle click al boton reanudar se llama el metodo reanudarjuego
+                    if (resultado == DialogResult.OK)
+                    {
+                        ReanudarJuego();
+                    }
+                    // al darle al boton reiniciar se llama el metodo reiniciarjuego
+                    else if (resultado == DialogResult.Yes)
+                    {
+                        ReiniciarJuego();
+                    }
+                    // al darle click al boton salir al menu cierra el menu y el formulario del tablero y manda al menu principal
+                    else if (resultado == DialogResult.Cancel)
+                    {
+                        this.Close();
+                        PingPongMenuP menuPrincipal = new PingPongMenuP();
+                        menuPrincipal.Show();
+                    }
+                }
             }
-            else if (e.KeyCode == Keys.W)
-            {
+            // Eventos para leer teclas de movimiento
+            else if (timerPingPong.Enabled) // para evitar movimiento del tablero mientras estamos en el menu
+            { 
+                 if (e.KeyCode == Keys.W)
+                 {
 
-                PosicionMovimientoJugador1Arriba();
+                 PosicionMovimientoJugador1Arriba();
 
-            }
-            else if (e.KeyCode == Keys.S) {
+                 }
+                 else if (e.KeyCode == Keys.S) {
 
-                PosicionMovimientoJugador1Abajo();
+                 PosicionMovimientoJugador1Abajo();
 
-            }
-            else if (e.KeyCode == Keys.Up)
-            {
+                 }
+                 else if (e.KeyCode == Keys.Up)
+                 {
 
-                PosicionMovimientoJugador2Arriba();
+                 PosicionMovimientoJugador2Arriba();
 
-            }
-            else if (e.KeyCode == Keys.Down)
-            {
+                 }
+                 else if (e.KeyCode == Keys.Down)
+                 {
 
-                PosicionMovimientoJugador2Abajo();
+                 PosicionMovimientoJugador2Abajo();
 
+                 }
             }
         }
 

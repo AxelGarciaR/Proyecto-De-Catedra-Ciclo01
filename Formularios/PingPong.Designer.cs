@@ -48,7 +48,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(209, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(301, 85);
+            this.label1.Size = new System.Drawing.Size(296, 89);
             this.label1.TabIndex = 0;
             this.label1.Text = "PAUSED";
             // 
@@ -59,7 +59,7 @@
             this.LbReanudar.ForeColor = System.Drawing.Color.White;
             this.LbReanudar.Location = new System.Drawing.Point(284, 202);
             this.LbReanudar.Name = "LbReanudar";
-            this.LbReanudar.Size = new System.Drawing.Size(132, 28);
+            this.LbReanudar.Size = new System.Drawing.Size(125, 29);
             this.LbReanudar.TabIndex = 1;
             this.LbReanudar.Text = "Reanudar";
             this.LbReanudar.Click += new System.EventHandler(this.LbReanudar_Click);
@@ -73,9 +73,10 @@
             this.LbReiniciar.ForeColor = System.Drawing.Color.White;
             this.LbReiniciar.Location = new System.Drawing.Point(284, 268);
             this.LbReiniciar.Name = "LbReiniciar";
-            this.LbReiniciar.Size = new System.Drawing.Size(147, 28);
+            this.LbReiniciar.Size = new System.Drawing.Size(139, 29);
             this.LbReiniciar.TabIndex = 2;
             this.LbReiniciar.Text = "Reiniciar";
+            this.LbReiniciar.Click += new System.EventHandler(this.LbReiniciar_Click);
             this.LbReiniciar.MouseLeave += new System.EventHandler(this.LbReiniciar_MouseLeave);
             this.LbReiniciar.MouseHover += new System.EventHandler(this.LbReiniciar_MouseHover);
             // 
@@ -86,7 +87,7 @@
             this.LbSalirAlmenu.ForeColor = System.Drawing.Color.White;
             this.LbSalirAlmenu.Location = new System.Drawing.Point(284, 333);
             this.LbSalirAlmenu.Name = "LbSalirAlmenu";
-            this.LbSalirAlmenu.Size = new System.Drawing.Size(207, 28);
+            this.LbSalirAlmenu.Size = new System.Drawing.Size(195, 29);
             this.LbSalirAlmenu.TabIndex = 3;
             this.LbSalirAlmenu.Text = "Salir al menu";
             this.LbSalirAlmenu.Click += new System.EventHandler(this.LbSalirAlmenu_Click);

@@ -50,26 +50,25 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
         private void LbReanudar_Click(object sender, EventArgs e)
         {
-            PingPongGame tableroJuego = new PingPongGame();
-            tableroJuego.Show();
-            this.Hide();
-        }
-
-        private void LbSalir_Click(object sender, EventArgs e)
-        {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
         private void LbSalirAlmenu_Click(object sender, EventArgs e)
         {
-            PingPongMenuP irMenu = new PingPongMenuP();
-            irMenu.Show();
-            this.Hide();
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
         private void PingPong_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void LbReiniciar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Yes;
+            this.Close();
         }
     }
 }
