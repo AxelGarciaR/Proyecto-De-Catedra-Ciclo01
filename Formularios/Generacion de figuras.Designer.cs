@@ -75,6 +75,7 @@
             this.btnCrearCorazon.TabIndex = 6;
             this.btnCrearCorazon.Text = "Crear corazon";
             this.btnCrearCorazon.UseVisualStyleBackColor = false;
+            this.btnCrearCorazon.Click += new System.EventHandler(this.btnCrearCorazon_Click);
             // 
             // tckbarBrillo
             // 
