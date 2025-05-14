@@ -41,7 +41,7 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnCrearHi = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.btnCrearNuevaFig = new System.Windows.Forms.Button();
+            this.btnCrearCruz = new System.Windows.Forms.Button();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnCambiarColor = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -96,6 +96,7 @@
             this.btnCrearTriangulo.TabIndex = 14;
             this.btnCrearTriangulo.Text = "Crear triangulo";
             this.btnCrearTriangulo.UseVisualStyleBackColor = false;
+            this.btnCrearTriangulo.Click += new System.EventHandler(this.btnCrearTriangulo_Click);
             // 
             // pictureBox2
             // 
@@ -118,6 +119,7 @@
             this.btnCrearCuadrado.TabIndex = 16;
             this.btnCrearCuadrado.Text = "Crear cuadrado";
             this.btnCrearCuadrado.UseVisualStyleBackColor = false;
+            this.btnCrearCuadrado.Click += new System.EventHandler(this.btnCrearCuadrado_Click);
             // 
             // pictureBox3
             // 
@@ -140,6 +142,7 @@
             this.btnCrearGato.TabIndex = 18;
             this.btnCrearGato.Text = "Crear gato";
             this.btnCrearGato.UseVisualStyleBackColor = false;
+            this.btnCrearGato.Click += new System.EventHandler(this.btnCrearGato_Click);
             // 
             // pictureBox4
             // 
@@ -162,6 +165,7 @@
             this.btnCrearHi.TabIndex = 20;
             this.btnCrearHi.Text = "Crear hi";
             this.btnCrearHi.UseVisualStyleBackColor = false;
+            this.btnCrearHi.Click += new System.EventHandler(this.btnCrearHi_Click);
             // 
             // pictureBox5
             // 
@@ -173,17 +177,18 @@
             this.pictureBox5.TabIndex = 19;
             this.pictureBox5.TabStop = false;
             // 
-            // btnCrearNuevaFig
+            // btnCrearCruz
             // 
-            this.btnCrearNuevaFig.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(32)))), ((int)(((byte)(87)))));
-            this.btnCrearNuevaFig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearNuevaFig.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCrearNuevaFig.Location = new System.Drawing.Point(357, 346);
-            this.btnCrearNuevaFig.Name = "btnCrearNuevaFig";
-            this.btnCrearNuevaFig.Size = new System.Drawing.Size(117, 28);
-            this.btnCrearNuevaFig.TabIndex = 22;
-            this.btnCrearNuevaFig.Text = "Nueva figura";
-            this.btnCrearNuevaFig.UseVisualStyleBackColor = false;
+            this.btnCrearCruz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(32)))), ((int)(((byte)(87)))));
+            this.btnCrearCruz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearCruz.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCrearCruz.Location = new System.Drawing.Point(357, 346);
+            this.btnCrearCruz.Name = "btnCrearCruz";
+            this.btnCrearCruz.Size = new System.Drawing.Size(117, 28);
+            this.btnCrearCruz.TabIndex = 22;
+            this.btnCrearCruz.Text = "Nueva figura";
+            this.btnCrearCruz.UseVisualStyleBackColor = false;
+            this.btnCrearCruz.Click += new System.EventHandler(this.btnCrearCruz_Click);
             // 
             // pictureBox6
             // 
@@ -227,7 +232,7 @@
             this.ClientSize = new System.Drawing.Size(523, 512);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCambiarColor);
-            this.Controls.Add(this.btnCrearNuevaFig);
+            this.Controls.Add(this.btnCrearCruz);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.btnCrearHi);
             this.Controls.Add(this.pictureBox5);
@@ -272,7 +277,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Button btnCrearHi;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Button btnCrearNuevaFig;
+        private System.Windows.Forms.Button btnCrearCruz;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button btnCambiarColor;
         private System.Windows.Forms.Label label1;
