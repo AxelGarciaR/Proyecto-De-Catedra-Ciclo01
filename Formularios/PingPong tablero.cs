@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Drawing;
 using System.Runtime.InteropServices;
+using System.IO.Ports;
+using System.Diagnostics;
 
 namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 {
     public partial class PingPongGame : Form
     {
+        private MatrizLEDController _ledController;
+
         public PingPongGame()
         {
             InitializeComponent();
+            _ledController = new MatrizLEDController("COM5");
         }
 
         //Variables base
@@ -26,10 +30,19 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
         int puntajeJugador1 = 0; //Contador para llevar el puntaje del jugador 1
         int puntajeJugador2 = 0; //Contador para llevar el puntaje del jugador 2
         int contadorRebotes = 0; //Contador para llevar los rebotes en las paletas de los jugadores
-
+     
         //Variables para comportamiento de pelota
         bool arriba;
         bool izquierda;
+
+        //Posiciones de jugadores y pelota
+        int xPelota = 300;
+        int yPelota = 176;
+        int xJugador = 12;
+        int yJugador = 150;
+        int xJugador2 = 618;
+        int yJugador2 = 150;
+
 
         private void PingPongGame_Load(object sender, EventArgs e)
         {
@@ -40,8 +53,8 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
             timerPingPong.Enabled = true;
             puntajeJugador1 = 0;
             puntajeJugador2 = 0;
-            lbPuntaje1.Text = puntajeJugador1.ToString(); 
-            lbPuntaje2.Text = puntajeJugador2.ToString(); 
+            lbPuntaje1.Text = puntajeJugador1.ToString();
+            lbPuntaje2.Text = puntajeJugador2.ToString();
         }
 
         // Para pausar el juego
@@ -70,7 +83,8 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 
 
 
-        private void ReiniciarJuegoAnotar() {
+        private void ReiniciarJuegoAnotar()
+        {
 
             pbxPelota.Location = new Point(300, 176);
             pbxJugador1.Location = new Point(12, 150);
@@ -82,7 +96,8 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 
         }
 
-        private void ramdomizarNumero() {
+        private void ramdomizarNumero()
+        {
 
             //Hacerlo de manera aleatoria para que al inicio la pelota se mueva a la izquierda o a la derecha
             Random valoral = new Random();
@@ -106,11 +121,12 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
         }
 
         //Metodo para leer la posicion de los jugadores
-        private void PosicionMovimientoJugador1Arriba() { 
+        private void PosicionMovimientoJugador1Arriba()
+        {
 
             int x1 = pbxJugador1.Location.X;
             int y1 = pbxJugador1.Location.Y;
-           
+
             int nuevaY = y1 - 50;
 
             if (nuevaY < 0) // 0 es la coordenada mas alta del formulario
@@ -194,7 +210,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
                 pbxJugador2.Location = new Point(x2, nuevaY);
             }
         }
-  
+
 
         //Evento para leer teclas
         private void PingPongGame_KeyDown(object sender, KeyEventArgs e)
@@ -204,7 +220,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
             {
                 PausarJuego(); // llamamos el metodo de pausa
                 //lo utilizamos para llamar al pingpong independientemente de lo seleccionado en el menu (a excepcion del salir)
-                using (PingPong menuPausa = new PingPong()) 
+                using (PingPong menuPausa = new PingPong())
                 {
                     //mostramos el menu de pausa como dialogo y se detiene el juego hasta cerrar el menu
                     DialogResult resultado = menuPausa.ShowDialog();
@@ -230,37 +246,39 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
             }
             // Eventos para leer teclas de movimiento
             else if (timerPingPong.Enabled) // para evitar movimiento del tablero mientras estamos en el menu
-            { 
-                 if (e.KeyCode == Keys.W)
-                 {
+            {
+                if (e.KeyCode == Keys.W)
+                {
 
-                 PosicionMovimientoJugador1Arriba();
+                    PosicionMovimientoJugador1Arriba();
 
-                 }
-                 else if (e.KeyCode == Keys.S) {
+                }
+                else if (e.KeyCode == Keys.S)
+                {
 
-                 PosicionMovimientoJugador1Abajo();
+                    PosicionMovimientoJugador1Abajo();
 
-                 }
-                 else if (e.KeyCode == Keys.Up)
-                 {
+                }
+                else if (e.KeyCode == Keys.Up)
+                {
 
-                 PosicionMovimientoJugador2Arriba();
+                    PosicionMovimientoJugador2Arriba();
 
-                 }
-                 else if (e.KeyCode == Keys.Down)
-                 {
+                }
+                else if (e.KeyCode == Keys.Down)
+                {
 
-                 PosicionMovimientoJugador2Abajo();
+                    PosicionMovimientoJugador2Abajo();
 
-                 }
+                }
             }
         }
 
         private void pbxJugador2_Click(object sender, EventArgs e)
         {
-            
+
         }
+
 
         private void timerPingPong_Tick(object sender, EventArgs e)
         {
@@ -297,9 +315,10 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
             {
                 izquierda = true; // La pelota rebota hacia la derecha
                 contadorRebotes += 1;
-                if (contadorRebotes > 5)
+                // Ajuste clave: Limita la velocidad máxima (ej: 30)
+                if (contadorRebotes >= 3 && velocidad < 30) // <- ¡Nuevo límite!
                 {
-                    velocidad += 10;
+                    velocidad += 2; // Aumenta menos 
                     contadorRebotes = 0;
                 }
             }
@@ -312,9 +331,10 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
             {
                 izquierda = false; // La pelota rebota hacia la izquierda
                 contadorRebotes += 1;
-                if (contadorRebotes > 5)
+                // Ajuste clave: Limita la velocidad máxima
+                if (contadorRebotes >= 3 && velocidad < 30) // <- ¡Nuevo límite!
                 {
-                    velocidad += 10;
+                    velocidad += 2; // Aumenta menos 
                     contadorRebotes = 0;
                 }
             }
@@ -324,46 +344,141 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
             {
                 pbxPelota.Left += velocidad; //Se movera a la derecha
             }
-            else {
+            else
+            {
                 pbxPelota.Left -= velocidad; //Se movera a la izquierda
             }
             if (arriba)
             {
                 pbxPelota.Top += velocidad; //Se movera hacia abajo
             }
-            else {
+            else
+            {
                 pbxPelota.Top -= velocidad; //Se movera hacia arriba
             }
 
-            if (pbxPelota.Top >= this.Height - 50) {
+            if (pbxPelota.Top >= this.Height - 50)
+            {
 
                 //Evita que desaparezca en la pared de abajo y se mueva hacia arriba
                 arriba = false;
 
             }
-            if (pbxPelota.Top <= 0) {
+            if (pbxPelota.Top <= 0)
+            {
 
                 //Cuando pegue en la pared de arriba se regrese y se mueva hacia abajo
                 arriba = true;
             }
-            if (pbxPelota.Left <= 0) {
+            if (pbxPelota.Left <= 0)
+            {
 
                 //Cuando pegue en la pared de la izquierda se regrese y se mueva hacia la derecha
                 izquierda = true;
 
             }
-            if (pbxPelota.Left >= this.Width - 10)
+            if (pbxPelota.Left >= this.Width - 30)
             {
                 //Cuando pegue en la pared de la derecha se regrese y se mueva hacia la izquierda
                 izquierda = false;
 
             }
 
-           
+
+            //Posiciones de jugadores y pelota en juego
+            int NuevaxPelota = pbxPelota.Location.X;
+            int NuevayPelota = pbxPelota.Location.Y;
+            int NuevaxJUgador = pbxJugador1.Location.X;
+            int NuevayJUgador = pbxJugador1.Location.Y;
+            int NuevaxJugador2 = pbxJugador2.Location.X;
+            int NuevayJugador2 = pbxJugador2.Location.Y;
+
+            //Posiciones de jugadores y pelota modificados
+            xPelota = NuevaxPelota;
+            yPelota = NuevayPelota;
+            xJugador = NuevaxJUgador;
+            yJugador = NuevayJUgador;
+            xJugador2 = NuevaxJugador2;
+            yJugador2 = NuevayJugador2;
+
+
+            // Descomenta y modifica esta línea:
+            _ledController.ActualizarMatrizLED(
+                xPelota, yPelota,
+                xJugador, yJugador,
+                xJugador2, yJugador2
+            );
 
 
 
+        }
 
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            _ledController?.Dispose();
+            base.OnFormClosing(e);
+        }
+
+    }
+
+    public class MatrizLEDController
+    {
+        private const int ANCHO_TABLERO = 650;
+        private const int ALTO_TABLERO = 450;
+        private readonly int zonaAncho = ANCHO_TABLERO / 8;
+        private readonly int zonaAlto = ALTO_TABLERO / 8;
+        private SerialPort _serialPort;
+
+        public MatrizLEDController(string portName)
+        {
+            _serialPort = new SerialPort(portName, 9600)
+            {
+                DtrEnable = true,  // Importante para resetear Arduino
+                NewLine = "\n"     // Definir el terminador de línea
+            };
+        }
+
+        private int ObtenerIndiceLED(int x, int y)
+        {
+            int colLED = Math.Max(0, Math.Min(x / zonaAncho, 7));
+            int filaLED = Math.Max(0, Math.Min(y / zonaAlto, 7));
+            return filaLED * 8 + colLED;
+        }
+
+        public void ActualizarMatrizLED(int xPelota, int yPelota,
+                                      int xJugador1, int yJugador1,
+                                      int xJugador2, int yJugador2)
+        {
+            try
+            {
+                int[] tableroLed = new int[64];
+
+                // Mapear posiciones
+                tableroLed[ObtenerIndiceLED(xPelota, yPelota)] = 2;
+                tableroLed[ObtenerIndiceLED(xJugador1, yJugador1)] = 1;
+                tableroLed[ObtenerIndiceLED(xJugador2, yJugador2)] = 1;
+
+                // Convertir y enviar
+                string datos = string.Join("", tableroLed) + "\n";
+
+                if (!_serialPort.IsOpen)
+                    _serialPort.Open();
+
+                _serialPort.Write(datos);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error: {ex.Message}");
+                // Reconectar si hay error
+                if (_serialPort.IsOpen)
+                    _serialPort.Close();
+            }
+        }
+
+        public void Dispose()
+        {
+            _serialPort?.Close();
+            _serialPort?.Dispose();
         }
     }
 }
