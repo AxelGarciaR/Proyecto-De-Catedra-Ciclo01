@@ -6,6 +6,8 @@
 
 LedControl lc = LedControl(DIN_PIN, CLK_PIN, CS_PIN, 1);
 String bufferSerial = "";
+bool modoPingPong = true; // Por defecto, usa el modo ping-pong
+
 
 void setup() {
   Serial.begin(9600);
@@ -23,14 +25,22 @@ void loop() {
     char c = Serial.read();
     
     if (c == '\n') {
-      procesarDatos(bufferSerial);
+      if (modoPingPong) {
+        procesarDatos(bufferSerial); // Modo ping-pong
+      } else {
+        dibujarFigura(bufferSerial); // Modo figuras
+      }
       bufferSerial = "";
+    } else if (c == 'P' || c == 'F') {
+      // Cambia el modo según el comando recibido
+      modoPingPong = (c == 'P');
     } else {
       bufferSerial += c;
     }
   }
 }
 
+//Metodo para trabajar con la representacion del ping pong
 void procesarDatos(String datos) {
   if (datos.length() != 64) return;
   
@@ -47,3 +57,20 @@ void procesarDatos(String datos) {
     }
   }
 }
+
+//Metodo para trabajar la represenacion de figuras en el arduino
+void dibujarFigura(String datos) {
+  if (datos.length() != 64) return;
+  
+  lc.clearDisplay(0);
+  
+  for (int i = 0; i < 64; i++) {
+    int fila = i / 8;
+    int columna = i % 8;
+    
+    if (datos[i] == '1') {
+      lc.setLed(0, fila, columna, true);
+    }
+  }
+}
+

@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,37 +27,32 @@ namespace PingPong_Generacion_de_figuras_Grupo3
         // FUNCIONES PARA DIBUJAR Y GENERAR CÓDIGO
         // Dibuja una figura 8x8 en pantalla a partir de una matriz de cadenas binarias
         private void DibujarFiguraDesdeCadena(string[] matriz)
-        {   // Obtiene el objeto Graphics del formulario para dibujar
-            Graphics g = this.CreateGraphics();
-            g.Clear(Color.Black); // Limpia el área de dibujo con fondo negro
-            Brush brush = Brushes.Red; // Define el color del "pixel" (puedes cambiarlo)
-
-            int tam = 30; // Tamaño de cada celda en la cuadrícula
-                        
-            for (int y = 0; y < 8; y++)  // Recorre las 8 filas (Y)
+        {
+            // Validar entrada
+            if (matriz == null || matriz.Length != 8 || matriz.Any(fila => fila.Length != 8))
             {
-                for (int x = 0; x < 8; x++) // Recorre las 8 columnas (X)
-                {
-                    // Si en la posición hay un '1', se dibuja un cuadrado
-                    if (matriz[y][x] == '1')
+                MessageBox.Show("La matriz debe ser de 8x8 caracteres (1s y 0s)", "Error");
+                return;
+            }
 
-                    {  // Dibuja un pequeño rectángulo (un "LED encendido")
-                        g.FillRectangle(brush, x * tam, y * tam + 100, tam - 2, tam - 2);
+            // Crear objeto Graphics y limpiar el área
+            using (Graphics g = this.CreateGraphics())
+            {
+                g.Clear(Color.Black);
+                Brush brush = Brushes.Red;
+                int tam = 30; // Tamaño de cada celda
+
+                for (int y = 0; y < 8; y++)
+                {
+                    for (int x = 0; x < 8; x++)
+                    {
+                        if (matriz[y][x] == '1')
+                        {
+                            g.FillRectangle(brush, x * tam, y * tam + 100, tam - 2, tam - 2);
+                        }
                     }
                 }
-            }
-        }
-        // Convierte la figura en una cadena de código para usar en Arduino
-        private string GenerarCodigoArduino(string[] matriz)
-        {
-            List<string> lineas = new List<string>();
-            // Recorre cada fila y le agrega la letra 'B' para indicar binario en Arduino
-            foreach (var fila in matriz)  
-            {
-                lineas.Add("B" + fila);
-            }
-            // Une todas las líneas en un arreglo de tipo byte que Arduino puede interpretar
-            return "byte figura[] = {\r\n  " + string.Join(",\r\n  ", lineas) + "\r\n};";
+            } // El using asegura que 'g' se libere automáticamente
         }
 
         // // Evento del botón que genera la figura
@@ -70,32 +67,28 @@ namespace PingPong_Generacion_de_figuras_Grupo3
                 "01111110",
                 "00111100",
                 "00011000",
-                "00000000"
+                "00011000"
             };
 
-            DibujarFiguraDesdeCadena(corazon); // Dibuja la figura en el formulario
+            EnviarFiguraALedMatrix(corazon , false);
 
-            string codigo = GenerarCodigoArduino(corazon);// Genera y muestra el código Arduino equivalente
-            MessageBox.Show(codigo, "Código para Arduino");
         }
         // Evento del botón que genera la figura
         private void btnCrearTriangulo_Click(object sender, EventArgs e)
         {
             string[] triangulo = new string[]
-
-            {  "00011000",
+            {  
+               "00000000",
+               "00011000",
                "00111100",
                "01111110",
                "11111111",
-               "00011000",
-               "00011000",
-               "00011000",
+               "11111111",
+               "00000000",
                "00000000"
             };
-            DibujarFiguraDesdeCadena(triangulo);  // Dibuja la figura en el formulario
-            string codigo = GenerarCodigoArduino(triangulo); // Genera y muestra el código Arduino equivalente
-            MessageBox.Show(codigo, "codigo para arduino");
 
+            EnviarFiguraALedMatrix(triangulo , false);
 
         }
         // Evento del botón que genera la figura
@@ -109,12 +102,11 @@ namespace PingPong_Generacion_de_figuras_Grupo3
                "10000001",
                "10000001",
                "10000001",
-               "11111111",
-               "00000000"
+               "10000001",
+               "11111111"
              };
-            DibujarFiguraDesdeCadena(cuadrado);  // Dibuja la figura en el formulario
-            string codigo = GenerarCodigoArduino(cuadrado); // Genera y muestra el código Arduino equivalente
-            MessageBox.Show(codigo, "codigo para arduino");
+
+            EnviarFiguraALedMatrix(cuadrado , false);
         }
         // Evento del botón que genera la figura
         private void btnCrearGato_Click(object sender, EventArgs e)
@@ -131,9 +123,8 @@ namespace PingPong_Generacion_de_figuras_Grupo3
              "10011001",
              "00000000"
             };
-            DibujarFiguraDesdeCadena(creargato);  // Dibuja la figura en el formulario
-            string codigo = GenerarCodigoArduino(creargato); // Genera y muestra el código Arduino equivalente
-            MessageBox.Show(codigo, "codigo para el arduino");
+
+            EnviarFiguraALedMatrix(creargato, false);
 
         }
         // Evento del botón que genera la figura
@@ -142,18 +133,17 @@ namespace PingPong_Generacion_de_figuras_Grupo3
             string[] crearhi = new string[]
             {
 
-              "10000001",
-              "10000001",
+              "11000011",
+              "11111111",
+              "11111111",
+              "11000011",
+              "00000000",
               "11111111",
               "00011000",
-              "00011000",
-              "00000000",
-              "01111110",
-              "00000000"
+              "11111111"
             };
-            DibujarFiguraDesdeCadena(crearhi);  // Dibuja la figura en el formulario
-            string codigo = GenerarCodigoArduino(crearhi); // Genera y muestra el código Arduino equivalente
-            MessageBox.Show(codigo, "codigo para el arduino");
+
+            EnviarFiguraALedMatrix(crearhi, false);
         }
         // Evento del botón que genera la figura
         private void btnCrearCruz_Click(object sender, EventArgs e)
@@ -164,21 +154,42 @@ namespace PingPong_Generacion_de_figuras_Grupo3
                  "00011000",
                  "00011000",
                  "11111111",
+                 "11111111",
                  "00011000",
                  "00011000",
-                 "00011000",
-                 "00000000"
+                 "00011000"
             };
-            DibujarFiguraDesdeCadena(crearcruz);  // Dibuja la figura en el formulario
-            string codigo = GenerarCodigoArduino(crearcruz); // Genera y muestra el código Arduino equivalente
-            MessageBox.Show(codigo, "codigo para el arduino :)");
-        }  
+            EnviarFiguraALedMatrix(crearcruz, false);
+        }
 
-        /*
-        
-        Utilizar las cadenas que genere de 01 de generar figura 
+        private void EnviarFiguraALedMatrix(string[] figura, bool esModoPingPong)
+        {
+            // Validación de la figura (8x8)
+            if (figura.Length != 8 || figura.Any(fila => fila.Length != 8))
+            {
+                MessageBox.Show("La figura debe ser de 8x8 caracteres", "Error");
+                return;
+            }
 
-         */
+            string datosParaArduino = string.Join("", figura);
+            
+            using (SerialPort serial = new SerialPort("COM5", 9600))
+            {
+                try
+                {
+                    serial.Open();
+                    // Envía 'P' o 'F' antes de los datos
+                    char comando = esModoPingPong ? 'P' : 'F';
+                    serial.Write(comando.ToString());
+                    serial.WriteLine(datosParaArduino);
+                    MessageBox.Show("Datos enviados al Arduino!", "Éxito");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}\nVerifica el puerto COM", "Error");
+                }
+            }
+        }
+
     }
 }
-

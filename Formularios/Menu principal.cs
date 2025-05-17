@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MatrizLED;
+using PingPong_Generacion_de_figuras_Grupo3.Formularios;
 
 namespace PingPong_Generacion_de_figuras_Grupo3
 {
@@ -173,6 +174,27 @@ namespace PingPong_Generacion_de_figuras_Grupo3
             opcionesIndicadores[opcionselecionada].Visible = true;
         }
 
+        private void lbAyuda_Click(object sender, EventArgs e)
+        {
+            OpcionesProyecto opciones = new OpcionesProyecto();
+            this.Hide();
+            opciones.Show();
+        }
+
+        private void lbJugarPingPong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCerrarPrograma_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbGeneracion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

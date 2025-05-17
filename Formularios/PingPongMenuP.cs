@@ -75,5 +75,35 @@ namespace PingPong_Generacion_de_figuras_Grupo3
         {
             this.Close();
         }
+
+        private void lbSalirMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbControles_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PbMenu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PbSalir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PbReini_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PbRean_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

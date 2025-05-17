@@ -32,7 +32,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCrearCorazon = new System.Windows.Forms.Button();
             this.coldialogColorMatriz = new System.Windows.Forms.ColorDialog();
-            this.tckbarBrillo = new System.Windows.Forms.TrackBar();
             this.btnCrearTriangulo = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnCrearCuadrado = new System.Windows.Forms.Button();
@@ -46,7 +45,6 @@
             this.btnCambiarColor = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tckbarBrillo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -76,14 +74,6 @@
             this.btnCrearCorazon.Text = "Crear corazon";
             this.btnCrearCorazon.UseVisualStyleBackColor = false;
             this.btnCrearCorazon.Click += new System.EventHandler(this.btnCrearCorazon_Click);
-            // 
-            // tckbarBrillo
-            // 
-            this.tckbarBrillo.Location = new System.Drawing.Point(193, 441);
-            this.tckbarBrillo.Name = "tckbarBrillo";
-            this.tckbarBrillo.Size = new System.Drawing.Size(281, 45);
-            this.tckbarBrillo.TabIndex = 25;
-            this.tckbarBrillo.TickStyle = System.Windows.Forms.TickStyle.Both;
             // 
             // btnCrearTriangulo
             // 
@@ -186,7 +176,7 @@
             this.btnCrearCruz.Name = "btnCrearCruz";
             this.btnCrearCruz.Size = new System.Drawing.Size(117, 28);
             this.btnCrearCruz.TabIndex = 22;
-            this.btnCrearCruz.Text = "Nueva figura";
+            this.btnCrearCruz.Text = "Crear cruz";
             this.btnCrearCruz.UseVisualStyleBackColor = false;
             this.btnCrearCruz.Click += new System.EventHandler(this.btnCrearCruz_Click);
             // 
@@ -207,7 +197,7 @@
             this.btnCambiarColor.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCambiarColor.Location = new System.Drawing.Point(34, 441);
             this.btnCambiarColor.Name = "btnCambiarColor";
-            this.btnCambiarColor.Size = new System.Drawing.Size(117, 45);
+            this.btnCambiarColor.Size = new System.Drawing.Size(439, 45);
             this.btnCambiarColor.TabIndex = 23;
             this.btnCambiarColor.Text = "Crear figura";
             this.btnCambiarColor.UseVisualStyleBackColor = false;
@@ -242,7 +232,6 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btnCrearTriangulo);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.tckbarBrillo);
             this.Controls.Add(this.btnCrearCorazon);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -252,7 +241,6 @@
             this.Text = "Generacion de figuras";
             this.Load += new System.EventHandler(this.GeneracionFiguras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tckbarBrillo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -268,7 +256,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCrearCorazon;
         private System.Windows.Forms.ColorDialog coldialogColorMatriz;
-        private System.Windows.Forms.TrackBar tckbarBrillo;
         private System.Windows.Forms.Button btnCrearTriangulo;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnCrearCuadrado;

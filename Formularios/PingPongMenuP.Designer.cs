@@ -60,7 +60,7 @@
             this.lbIniciarPingPong.AutoSize = true;
             this.lbIniciarPingPong.Font = new System.Drawing.Font("Monocraft", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIniciarPingPong.ForeColor = System.Drawing.Color.White;
-            this.lbIniciarPingPong.Location = new System.Drawing.Point(284, 202);
+            this.lbIniciarPingPong.Location = new System.Drawing.Point(283, 181);
             this.lbIniciarPingPong.Name = "lbIniciarPingPong";
             this.lbIniciarPingPong.Size = new System.Drawing.Size(117, 28);
             this.lbIniciarPingPong.TabIndex = 1;
@@ -74,11 +74,12 @@
             this.lbSalirMenu.AutoSize = true;
             this.lbSalirMenu.Font = new System.Drawing.Font("Monocraft", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSalirMenu.ForeColor = System.Drawing.Color.White;
-            this.lbSalirMenu.Location = new System.Drawing.Point(284, 403);
+            this.lbSalirMenu.Location = new System.Drawing.Point(283, 382);
             this.lbSalirMenu.Name = "lbSalirMenu";
             this.lbSalirMenu.Size = new System.Drawing.Size(207, 28);
             this.lbSalirMenu.TabIndex = 3;
             this.lbSalirMenu.Text = "Salir al menu";
+            this.lbSalirMenu.Click += new System.EventHandler(this.lbSalirMenu_Click);
             this.lbSalirMenu.MouseLeave += new System.EventHandler(this.LbSalirAlmenu_MouseLeave);
             this.lbSalirMenu.MouseHover += new System.EventHandler(this.LbSalirAlmenu_MouseHover);
             // 
@@ -87,7 +88,7 @@
             this.lbSalirAplicacion.AutoSize = true;
             this.lbSalirAplicacion.Font = new System.Drawing.Font("Monocraft", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSalirAplicacion.ForeColor = System.Drawing.Color.White;
-            this.lbSalirAplicacion.Location = new System.Drawing.Point(284, 336);
+            this.lbSalirAplicacion.Location = new System.Drawing.Point(283, 315);
             this.lbSalirAplicacion.Name = "lbSalirAplicacion";
             this.lbSalirAplicacion.Size = new System.Drawing.Size(87, 28);
             this.lbSalirAplicacion.TabIndex = 4;
@@ -99,59 +100,64 @@
             // PbSalir
             // 
             this.PbSalir.Image = ((System.Drawing.Image)(resources.GetObject("PbSalir.Image")));
-            this.PbSalir.Location = new System.Drawing.Point(228, 323);
+            this.PbSalir.Location = new System.Drawing.Point(227, 302);
             this.PbSalir.Name = "PbSalir";
             this.PbSalir.Size = new System.Drawing.Size(50, 53);
             this.PbSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbSalir.TabIndex = 7;
             this.PbSalir.TabStop = false;
             this.PbSalir.Visible = false;
+            this.PbSalir.Click += new System.EventHandler(this.PbSalir_Click);
             // 
             // PbMenu
             // 
             this.PbMenu.Image = ((System.Drawing.Image)(resources.GetObject("PbMenu.Image")));
-            this.PbMenu.Location = new System.Drawing.Point(228, 392);
+            this.PbMenu.Location = new System.Drawing.Point(227, 371);
             this.PbMenu.Name = "PbMenu";
             this.PbMenu.Size = new System.Drawing.Size(50, 53);
             this.PbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbMenu.TabIndex = 8;
             this.PbMenu.TabStop = false;
             this.PbMenu.Visible = false;
+            this.PbMenu.Click += new System.EventHandler(this.PbMenu_Click);
             // 
             // PbRean
             // 
             this.PbRean.Image = ((System.Drawing.Image)(resources.GetObject("PbRean.Image")));
-            this.PbRean.Location = new System.Drawing.Point(228, 190);
+            this.PbRean.Location = new System.Drawing.Point(227, 169);
             this.PbRean.Name = "PbRean";
             this.PbRean.Size = new System.Drawing.Size(50, 53);
             this.PbRean.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbRean.TabIndex = 10;
             this.PbRean.TabStop = false;
             this.PbRean.Visible = false;
+            this.PbRean.Click += new System.EventHandler(this.PbRean_Click);
             // 
             // lbControles
             // 
             this.lbControles.AutoSize = true;
             this.lbControles.Font = new System.Drawing.Font("Monocraft", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbControles.ForeColor = System.Drawing.Color.White;
-            this.lbControles.Location = new System.Drawing.Point(284, 268);
+            this.lbControles.Location = new System.Drawing.Point(283, 247);
             this.lbControles.Name = "lbControles";
             this.lbControles.Size = new System.Drawing.Size(147, 28);
             this.lbControles.TabIndex = 2;
             this.lbControles.Text = "Controles";
+            this.lbControles.Click += new System.EventHandler(this.lbControles_Click);
             this.lbControles.MouseLeave += new System.EventHandler(this.LbReiniciar_MouseLeave);
             this.lbControles.MouseHover += new System.EventHandler(this.LbReiniciar_MouseHover);
             // 
             // PbReini
             // 
             this.PbReini.Image = ((System.Drawing.Image)(resources.GetObject("PbReini.Image")));
-            this.PbReini.Location = new System.Drawing.Point(228, 256);
+            this.PbReini.Location = new System.Drawing.Point(227, 235);
             this.PbReini.Name = "PbReini";
             this.PbReini.Size = new System.Drawing.Size(50, 53);
             this.PbReini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PbReini.TabIndex = 9;
             this.PbReini.TabStop = false;
             this.PbReini.Visible = false;
+            this.PbReini.Click += new System.EventHandler(this.PbReini_Click);
             // 
             // PingPongMenuP
             // 
