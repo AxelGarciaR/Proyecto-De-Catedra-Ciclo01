@@ -50,12 +50,12 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
         private void LbSalirAlmenu_MouseHover(object sender, EventArgs e)
         {
-            PbMenu.Visible = true;
+            
         }
 
         private void LbSalirAlmenu_MouseLeave(object sender, EventArgs e)
         {
-            PbMenu.Visible = false;
+           
         }
 
         private void lbIniciarPingPong_Click(object sender, EventArgs e)
