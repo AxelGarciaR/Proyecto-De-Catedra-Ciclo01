@@ -28,19 +28,15 @@ namespace PingPong_Generacion_de_figuras_Grupo3
         {
             opcioneslabels = new Label[]
             {
-                lbGeneracion, lbJugarPingPong, lbCerrarPrograma, 
+                lbGeneracion, lbJugarPingPong, lbCerrarPrograma, lbAyuda
             };
 
             opcionesIndicadores = new PictureBox[]
             {
-                pbSelect1, pbSelect2, pbSelect3, 
+                pbSelect1, pbSelect2, pbSelect3, pbSelect4
             };
 
-<<<<<<< HEAD
-            // Oculta todo menos lbStart
            
-=======
->>>>>>> a0509c56e111eeaea7d5ae82e0532e67f343b6d7
         }
 
         private void MenuPrincipal_KeyDown(object sender, KeyEventArgs e)
@@ -137,12 +133,12 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
         private void lbAyuda_MouseHover(object sender, EventArgs e)
         {
-            
+            pbSelect4.Visible = true;
         }
 
         private void lbAyuda_MouseLeave(object sender, EventArgs e)
         {
-           
+            pbSelect4.Visible = false;
         }
 
         // ==== Clicks en los PictureBox ====
@@ -177,11 +173,14 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
         private void lbAyuda_Click(object sender, EventArgs e)
         {
-           
+            OpcionesProyecto opciones = new OpcionesProyecto();
+            this.Hide();
+            opciones.Show();
         }
 
         private void lbJugarPingPong_Click(object sender, EventArgs e)
         {
+
             // Lógica para abrir el juego de ping pong
             var ventanaPingPong = new PingPongMenuP();
             ventanaPingPong.Show();
@@ -189,10 +188,6 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
         private void lbCerrarPrograma_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-
-=======
->>>>>>> a0509c56e111eeaea7d5ae82e0532e67f343b6d7
             // Cerrar la aplicación
             Application.Exit();
         }
