@@ -48,16 +48,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3
             PbSalir.Visible = false;
         }
 
-        private void LbSalirAlmenu_MouseHover(object sender, EventArgs e)
-        {
-            PbMenu.Visible = true;
-        }
-
-        private void LbSalirAlmenu_MouseLeave(object sender, EventArgs e)
-        {
-            PbMenu.Visible = false;
-        }
-
+        //Eventto para iniciar el ping pong
         private void lbIniciarPingPong_Click(object sender, EventArgs e)
         {
             PingPongGame juego = new PingPongGame();
@@ -71,9 +62,12 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
         }
 
+        //Evento para manejar salir al menu
         private void lbSalirAplicacion_Click(object sender, EventArgs e)
         {
+            MenuPrincipal menu = new MenuPrincipal();
             this.Close();
+            menu.Show();
         }
 
         private void lbSalirMenu_Click(object sender, EventArgs e)
@@ -81,9 +75,10 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
         }
 
+        //Evento para dar las indicaciones de los controles
         private void lbControles_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("W y S para jugador 1 (izquierda), flecha arriba y abajo para jugador 2 (derecho)", "Controles");
         }
 
         private void PbMenu_Click(object sender, EventArgs e)

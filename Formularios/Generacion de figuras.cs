@@ -24,40 +24,11 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
         }
 
-        // FUNCIONES PARA DIBUJAR Y GENERAR CÓDIGO
-        // Dibuja una figura 8x8 en pantalla a partir de una matriz de cadenas binarias
-        private void DibujarFiguraDesdeCadena(string[] matriz)
-        {
-            // Validar entrada
-            if (matriz == null || matriz.Length != 8 || matriz.Any(fila => fila.Length != 8))
-            {
-                MessageBox.Show("La matriz debe ser de 8x8 caracteres (1s y 0s)", "Error");
-                return;
-            }
 
-            // Crear objeto Graphics y limpiar el área
-            using (Graphics g = this.CreateGraphics())
-            {
-                g.Clear(Color.Black);
-                Brush brush = Brushes.Red;
-                int tam = 30; // Tamaño de cada celda
-
-                for (int y = 0; y < 8; y++)
-                {
-                    for (int x = 0; x < 8; x++)
-                    {
-                        if (matriz[y][x] == '1')
-                        {
-                            g.FillRectangle(brush, x * tam, y * tam + 100, tam - 2, tam - 2);
-                        }
-                    }
-                }
-            } // El using asegura que 'g' se libere automáticamente
-        }
-
-        // // Evento del botón que genera la figura
+        // Evento del botón que genera la figura de corzazon
         private void btnCrearCorazon_Click(object sender, EventArgs e)
         {
+            //Array para guardar los valores de encendido y apagado de leds
             string[] corazon = new string[]
             {
                 "01100110",
@@ -73,9 +44,10 @@ namespace PingPong_Generacion_de_figuras_Grupo3
             EnviarFiguraALedMatrix(corazon , false);
 
         }
-        // Evento del botón que genera la figura
+        // Evento del botón que genera la figura de triangulo
         private void btnCrearTriangulo_Click(object sender, EventArgs e)
         {
+            //Array para guardar los valores de encendido y apagado de leds
             string[] triangulo = new string[]
             {  
                "00000000",
@@ -91,9 +63,10 @@ namespace PingPong_Generacion_de_figuras_Grupo3
             EnviarFiguraALedMatrix(triangulo , false);
 
         }
-        // Evento del botón que genera la figura
+        // Evento del botón que genera la figura de cuadrado
         private void btnCrearCuadrado_Click(object sender, EventArgs e)
         {
+            //Array para guardar los valores de encendido y apagado de leds
             string[] cuadrado = new string[]
             {
                "11111111",
@@ -108,9 +81,10 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
             EnviarFiguraALedMatrix(cuadrado , false);
         }
-        // Evento del botón que genera la figura
+        // Evento del botón que genera la figura de gato
         private void btnCrearGato_Click(object sender, EventArgs e)
         {
+            //Array para guardar los valores de encendido y apagado de leds
             string[] creargato = new string[]
             {
 
@@ -127,9 +101,10 @@ namespace PingPong_Generacion_de_figuras_Grupo3
             EnviarFiguraALedMatrix(creargato, false);
 
         }
-        // Evento del botón que genera la figura
+        // Evento del botón que genera la figura de HI
         private void btnCrearHi_Click(object sender, EventArgs e)
         {
+            //Array para guardar los valores de encendido y apagado de leds
             string[] crearhi = new string[]
             {
 
@@ -145,9 +120,11 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
             EnviarFiguraALedMatrix(crearhi, false);
         }
-        // Evento del botón que genera la figura
+
+        // Evento del botón que genera la figura de cruz
         private void btnCrearCruz_Click(object sender, EventArgs e)
         {
+            //Array para guardar los valores de encendido y apagado de leds
             string[] crearcruz = new string[]
             {
                  "00011000",
@@ -171,16 +148,20 @@ namespace PingPong_Generacion_de_figuras_Grupo3
                 return;
             }
 
+            //Concatena la figura
             string datosParaArduino = string.Join("", figura);
             
+            //Se hace uso del puerto donde esta conectado el arduino para la comunicacion
             using (SerialPort serial = new SerialPort("COM5", 9600))
             {
                 try
                 {
                     serial.Open();
-                    // Envía 'P' o 'F' antes de los datos
+                    // Envía 'P' o 'F' antes de los datos para que se seleccione el modo del arduino
                     char comando = esModoPingPong ? 'P' : 'F';
+                    //Se envia el modo
                     serial.Write(comando.ToString());
+                    //Se envia la figura el arduino
                     serial.WriteLine(datosParaArduino);
                     MessageBox.Show("Datos enviados al Arduino!", "Éxito");
                 }
@@ -191,5 +172,12 @@ namespace PingPong_Generacion_de_figuras_Grupo3
             }
         }
 
+        //Evento para regresar al menu
+        private void brnRegresar_Click(object sender, EventArgs e)
+        {
+            MenuPrincipal menu = new MenuPrincipal();
+            this.Close();
+            menu.Show();
+        }
     }
 }

@@ -46,9 +46,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monocraft", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(209, 64);
+            this.label1.Location = new System.Drawing.Point(64, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(296, 89);
+            this.label1.Size = new System.Drawing.Size(301, 85);
             this.label1.TabIndex = 0;
             this.label1.Text = "PAUSED";
             // 
@@ -57,9 +57,9 @@
             this.LbReanudar.AutoSize = true;
             this.LbReanudar.Font = new System.Drawing.Font("Monocraft", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbReanudar.ForeColor = System.Drawing.Color.White;
-            this.LbReanudar.Location = new System.Drawing.Point(284, 202);
+            this.LbReanudar.Location = new System.Drawing.Point(139, 172);
             this.LbReanudar.Name = "LbReanudar";
-            this.LbReanudar.Size = new System.Drawing.Size(125, 29);
+            this.LbReanudar.Size = new System.Drawing.Size(132, 28);
             this.LbReanudar.TabIndex = 1;
             this.LbReanudar.Text = "Reanudar";
             this.LbReanudar.Click += new System.EventHandler(this.LbReanudar_Click);
@@ -71,9 +71,9 @@
             this.LbReiniciar.AutoSize = true;
             this.LbReiniciar.Font = new System.Drawing.Font("Monocraft", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbReiniciar.ForeColor = System.Drawing.Color.White;
-            this.LbReiniciar.Location = new System.Drawing.Point(284, 268);
+            this.LbReiniciar.Location = new System.Drawing.Point(139, 238);
             this.LbReiniciar.Name = "LbReiniciar";
-            this.LbReiniciar.Size = new System.Drawing.Size(139, 29);
+            this.LbReiniciar.Size = new System.Drawing.Size(147, 28);
             this.LbReiniciar.TabIndex = 2;
             this.LbReiniciar.Text = "Reiniciar";
             this.LbReiniciar.Click += new System.EventHandler(this.LbReiniciar_Click);
@@ -85,9 +85,9 @@
             this.LbSalirAlmenu.AutoSize = true;
             this.LbSalirAlmenu.Font = new System.Drawing.Font("Monocraft", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbSalirAlmenu.ForeColor = System.Drawing.Color.White;
-            this.LbSalirAlmenu.Location = new System.Drawing.Point(284, 333);
+            this.LbSalirAlmenu.Location = new System.Drawing.Point(139, 303);
             this.LbSalirAlmenu.Name = "LbSalirAlmenu";
-            this.LbSalirAlmenu.Size = new System.Drawing.Size(195, 29);
+            this.LbSalirAlmenu.Size = new System.Drawing.Size(207, 28);
             this.LbSalirAlmenu.TabIndex = 3;
             this.LbSalirAlmenu.Text = "Salir al menu";
             this.LbSalirAlmenu.Click += new System.EventHandler(this.LbSalirAlmenu_Click);
@@ -97,7 +97,7 @@
             // PbMenu
             // 
             this.PbMenu.Image = ((System.Drawing.Image)(resources.GetObject("PbMenu.Image")));
-            this.PbMenu.Location = new System.Drawing.Point(228, 322);
+            this.PbMenu.Location = new System.Drawing.Point(83, 292);
             this.PbMenu.Name = "PbMenu";
             this.PbMenu.Size = new System.Drawing.Size(50, 53);
             this.PbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -108,7 +108,7 @@
             // PbReini
             // 
             this.PbReini.Image = ((System.Drawing.Image)(resources.GetObject("PbReini.Image")));
-            this.PbReini.Location = new System.Drawing.Point(228, 256);
+            this.PbReini.Location = new System.Drawing.Point(83, 226);
             this.PbReini.Name = "PbReini";
             this.PbReini.Size = new System.Drawing.Size(50, 53);
             this.PbReini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -119,7 +119,7 @@
             // PbRean
             // 
             this.PbRean.Image = ((System.Drawing.Image)(resources.GetObject("PbRean.Image")));
-            this.PbRean.Location = new System.Drawing.Point(228, 190);
+            this.PbRean.Location = new System.Drawing.Point(83, 160);
             this.PbRean.Name = "PbRean";
             this.PbRean.Size = new System.Drawing.Size(50, 53);
             this.PbRean.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -132,7 +132,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(708, 534);
+            this.ClientSize = new System.Drawing.Size(437, 397);
             this.Controls.Add(this.PbRean);
             this.Controls.Add(this.PbReini);
             this.Controls.Add(this.PbMenu);

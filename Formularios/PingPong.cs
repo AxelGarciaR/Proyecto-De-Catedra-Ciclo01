@@ -18,6 +18,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3
             InitializeComponent();
         }
 
+        //Mouse hover para hacer las animaciones de seleccionado
         private void lbReanudar_MouseHover(object sender, EventArgs e)
         {
             PbRean.Visible = true;
@@ -48,12 +49,14 @@ namespace PingPong_Generacion_de_figuras_Grupo3
             PbMenu.Visible = false;
         }
 
+        //Devuelve el resultado ok para reanudar el juego
         private void LbReanudar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
+        //Cancela el resultado y sale al menu principal
         private void LbSalirAlmenu_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -65,6 +68,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
         }
 
+        //Devulve resultado yes para reiniciar el juego
         private void LbReiniciar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Yes;

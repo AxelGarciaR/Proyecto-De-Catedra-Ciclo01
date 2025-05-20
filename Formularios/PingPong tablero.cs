@@ -25,8 +25,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 
         //Variables base
         int velocidad = 20; //Velocidad base de la pelota 
-        private int VelocidadInicial = 20; //Esta variable es para guardar y posteriormente usar el dato de la velocidad inicial 
-        int contador = 0; //Contador de puntos totales
+        private int VelocidadInicial = 25; //Esta variable es para guardar y posteriormente usar el dato de la velocidad inicial 
         int puntajeJugador1 = 0; //Contador para llevar el puntaje del jugador 1
         int puntajeJugador2 = 0; //Contador para llevar el puntaje del jugador 2
         int contadorRebotes = 0; //Contador para llevar los rebotes en las paletas de los jugadores
@@ -86,16 +85,45 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
         private void ReiniciarJuegoAnotar()
         {
 
-            pbxPelota.Location = new Point(300, 176);
-            pbxJugador1.Location = new Point(12, 150);
-            pbxJugador2.Location = new Point(618, 150);
 
-            ramdomizarNumero();
+            if (!(puntajeJugador1 == 10 || puntajeJugador2 == 10))
+            {
 
-            timerPingPong.Enabled = true;
+                pbxPelota.Location = new Point(300, 176);
+                pbxJugador1.Location = new Point(12, 150);
+                pbxJugador2.Location = new Point(618, 150);
+
+                ramdomizarNumero();
+
+                timerPingPong.Enabled = true;
+
+            }
+            else { 
+                
+                timerPingPong.Enabled = false;
+
+                if (puntajeJugador1 == 10) {
+                    MessageBox.Show("El ganador es el jugador 1 !!!!!");
+                    puntajeJugador2 = 0;
+                    puntajeJugador1 = 0;
+                    ReiniciarJuegoAnotar();
+                    lbPuntaje1.Text = puntajeJugador1.ToString();
+                    lbPuntaje2.Text = puntajeJugador2.ToString();
+                }
+                else{
+                    MessageBox.Show("El ganador es el jugador 2 !!!!!");
+                    puntajeJugador2 = 0;
+                    puntajeJugador1 = 0;
+                    ReiniciarJuegoAnotar();
+                    lbPuntaje1.Text = puntajeJugador1.ToString();
+                    lbPuntaje2.Text = puntajeJugador2.ToString();
+                }
+
+            }
 
         }
 
+        //Metodo para ramdomizar numero para ver si inicia la pelota hacia la hizquierda o hacia la derecha
         private void ramdomizarNumero()
         {
 
@@ -124,9 +152,11 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
         private void PosicionMovimientoJugador1Arriba()
         {
 
+            //Variables de ubicacion
             int x1 = pbxJugador1.Location.X;
             int y1 = pbxJugador1.Location.Y;
 
+            //Comportamiento hacia arriba de la paleta 1
             int nuevaY = y1 - 50;
 
             if (nuevaY < 0) // 0 es la coordenada mas alta del formulario
@@ -146,11 +176,13 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
         private void PosicionMovimientoJugador1Abajo()
         {
 
+            //Variables de ubicacion y de dimensiones
             int x1 = pbxJugador1.Location.X;
             int y1 = pbxJugador1.Location.Y;
             int alturaJugador1 = pbxJugador1.Height;
             int alturaformulario = this.ClientSize.Height;
 
+            //Comportamiento hacia abajo de la paleta 1
             int nuevaY = y1 + 50;
 
             if (nuevaY + alturaJugador1 > alturaformulario) // esta seria la forma de calcular la colision en la parte inferior
@@ -169,9 +201,11 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 
         private void PosicionMovimientoJugador2Arriba()
         {
+            //Variables de ubicacion
             int x2 = pbxJugador2.Location.X;
             int y2 = pbxJugador2.Location.Y;
 
+            //Comportamiento hacia arriba de la paleta 2
             int nuevaY = y2 - 50;
 
             if (nuevaY < 0) // 0 es la coordenada mas alta del formulario
@@ -191,11 +225,13 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 
         private void PosicionMovimientoJugador2Abajo()
         {
+            //Variables de ubicacion y de dimensiones
             int x2 = pbxJugador2.Location.X;
             int y2 = pbxJugador2.Location.Y;
             int alturaJugador2 = pbxJugador2.Height;
             int alturaformulario = this.ClientSize.Height;
 
+            //Comportamiento hacia abajo de la paleta 2
             int nuevaY = y2 + 50;
 
             if (nuevaY + alturaJugador2 > alturaformulario) // esta seria la forma de calcular la colision en la parte inferior
@@ -247,6 +283,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
             // Eventos para leer teclas de movimiento
             else if (timerPingPong.Enabled) // para evitar movimiento del tablero mientras estamos en el menu
             {
+                //Llamada de los metodos de movimiento segun el control presionado
                 if (e.KeyCode == Keys.W)
                 {
 
@@ -279,31 +316,37 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 
         }
 
-
+        //Evento para cada tick del contador
         private void timerPingPong_Tick(object sender, EventArgs e)
         {
             //Control de puntaje
             if (pbxPelota.Left > pbxJugador2.Left)
             {
-
+                //Se apaga el contador
                 timerPingPong.Enabled = false;
+                //Se asigna nuevo valor al contador de puntaje
                 puntajeJugador1 = puntajeJugador1 + 1;
+                //Se actualiza el label de puntaje
                 lbPuntaje1.Text = puntajeJugador1.ToString();
                 MessageBox.Show("Jugador 1 ha anotado " + puntajeJugador1.ToString() + " veces!");
+                //Se vuelve a resetear la velocidad a la base
                 velocidad = 20;
-                contador = contador++;
+                //Se llama al metodo de reniciar juego
                 ReiniciarJuegoAnotar();
 
             }
             else if (pbxPelota.Left < pbxJugador1.Left)
             {
-
+                //Se apaga el contador
                 timerPingPong.Enabled = false;
+                //Se asigna nuevo valor al contador de puntaje
                 puntajeJugador2 = puntajeJugador2 + 1;
+                //Se actualiza el label de puntaje
                 lbPuntaje2.Text = puntajeJugador2.ToString();
                 MessageBox.Show("Jugador 2 ha anotado " + puntajeJugador2.ToString() + " veces!");
+                //Se vuelve a resetear la velocidad a la base
                 velocidad = 20;
-                contador = contador++;
+                //Se llama al metodo de reniciar juego
                 ReiniciarJuegoAnotar();
             }
 
@@ -332,9 +375,9 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
                 izquierda = false; // La pelota rebota hacia la izquierda
                 contadorRebotes += 1;
                 // Ajuste clave: Limita la velocidad máxima
-                if (contadorRebotes >= 3 && velocidad < 30) // <- ¡Nuevo límite!
+                if (contadorRebotes >= 3 && velocidad < 30) //Se le asigna un limite para que no se teletransporte la pelota
                 {
-                    velocidad += 2; // Aumenta menos 
+                    velocidad += 2; // Ligero aumento en la velocidad 
                     contadorRebotes = 0;
                 }
             }
@@ -423,12 +466,14 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 
     public class MatrizLEDController
     {
+        //Se inician las variables de dimensiones de tablero para poder hacer filas y columnas en la matris
         private const int ANCHO_TABLERO = 650;
         private const int ALTO_TABLERO = 450;
         private readonly int zonaAncho = ANCHO_TABLERO / 8;
         private readonly int zonaAlto = ALTO_TABLERO / 8;
         private SerialPort _serialPort;
 
+        //Se inicia el objeto de la matriz
         public MatrizLEDController(string portName)
         {
             _serialPort = new SerialPort(portName, 9600)
@@ -438,19 +483,24 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
             };
         }
 
+        //Metodo para hacer columnas y filas en la matriz
         private int ObtenerIndiceLED(int x, int y)
         {
+            //Mat.Max para asegurar que el valor no se negativo el Math.min para que n exceda el indice maximo de 7
             int colLED = Math.Max(0, Math.Min(x / zonaAncho, 7));
             int filaLED = Math.Max(0, Math.Min(y / zonaAlto, 7));
+            //Devuelve los valores como un indice lineal para definir filas y columnas
             return filaLED * 8 + colLED;
         }
 
+        //Metodo para actualizar la matriz en el arduino tomando en cuenta la posicion en tiempo real de los elementos del ping pong
         public void ActualizarMatrizLED(int xPelota, int yPelota,
                                       int xJugador1, int yJugador1,
                                       int xJugador2, int yJugador2)
         {
             try
             {
+                //Se hace el array de la matriz led
                 int[] tableroLed = new int[64];
 
                 // Mapear posiciones
@@ -458,9 +508,10 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
                 tableroLed[ObtenerIndiceLED(xJugador1, yJugador1)] = 1;
                 tableroLed[ObtenerIndiceLED(xJugador2, yJugador2)] = 1;
 
-                // Convertir y enviar
+                //Se usa la variable datos para uniir las posiciones
                 string datos = string.Join("", tableroLed) + "\n";
 
+                //Se abre el serial y se manda la variable de datos
                 if (!_serialPort.IsOpen)
                     _serialPort.Open();
 
@@ -477,7 +528,9 @@ namespace PingPong_Generacion_de_figuras_Grupo3.Formularios
 
         public void Dispose()
         {
+            //Cierra el puerto serial si esta abierto
             _serialPort?.Close();
+            //Se liberan recursos del objeto serial port
             _serialPort?.Dispose();
         }
     }

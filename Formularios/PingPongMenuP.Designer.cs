@@ -31,15 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PingPongMenuP));
             this.label1 = new System.Windows.Forms.Label();
             this.lbIniciarPingPong = new System.Windows.Forms.Label();
-            this.lbSalirMenu = new System.Windows.Forms.Label();
             this.lbSalirAplicacion = new System.Windows.Forms.Label();
             this.PbSalir = new System.Windows.Forms.PictureBox();
-            this.PbMenu = new System.Windows.Forms.PictureBox();
             this.PbRean = new System.Windows.Forms.PictureBox();
             this.lbControles = new System.Windows.Forms.Label();
             this.PbReini = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.PbSalir)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbRean)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbReini)).BeginInit();
             this.SuspendLayout();
@@ -49,7 +46,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Monocraft", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(79, 56);
+            this.label1.Location = new System.Drawing.Point(61, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(565, 85);
             this.label1.TabIndex = 0;
@@ -60,7 +57,7 @@
             this.lbIniciarPingPong.AutoSize = true;
             this.lbIniciarPingPong.Font = new System.Drawing.Font("Monocraft", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIniciarPingPong.ForeColor = System.Drawing.Color.White;
-            this.lbIniciarPingPong.Location = new System.Drawing.Point(283, 181);
+            this.lbIniciarPingPong.Location = new System.Drawing.Point(265, 177);
             this.lbIniciarPingPong.Name = "lbIniciarPingPong";
             this.lbIniciarPingPong.Size = new System.Drawing.Size(117, 28);
             this.lbIniciarPingPong.TabIndex = 1;
@@ -69,26 +66,12 @@
             this.lbIniciarPingPong.MouseLeave += new System.EventHandler(this.lbReanudar_MouseLeave);
             this.lbIniciarPingPong.MouseHover += new System.EventHandler(this.lbReanudar_MouseHover);
             // 
-            // lbSalirMenu
-            // 
-            this.lbSalirMenu.AutoSize = true;
-            this.lbSalirMenu.Font = new System.Drawing.Font("Monocraft", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSalirMenu.ForeColor = System.Drawing.Color.White;
-            this.lbSalirMenu.Location = new System.Drawing.Point(283, 382);
-            this.lbSalirMenu.Name = "lbSalirMenu";
-            this.lbSalirMenu.Size = new System.Drawing.Size(207, 28);
-            this.lbSalirMenu.TabIndex = 3;
-            this.lbSalirMenu.Text = "Salir al menu";
-            this.lbSalirMenu.Click += new System.EventHandler(this.lbSalirMenu_Click);
-            this.lbSalirMenu.MouseLeave += new System.EventHandler(this.LbSalirAlmenu_MouseLeave);
-            this.lbSalirMenu.MouseHover += new System.EventHandler(this.LbSalirAlmenu_MouseHover);
-            // 
             // lbSalirAplicacion
             // 
             this.lbSalirAplicacion.AutoSize = true;
             this.lbSalirAplicacion.Font = new System.Drawing.Font("Monocraft", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSalirAplicacion.ForeColor = System.Drawing.Color.White;
-            this.lbSalirAplicacion.Location = new System.Drawing.Point(283, 315);
+            this.lbSalirAplicacion.Location = new System.Drawing.Point(265, 311);
             this.lbSalirAplicacion.Name = "lbSalirAplicacion";
             this.lbSalirAplicacion.Size = new System.Drawing.Size(87, 28);
             this.lbSalirAplicacion.TabIndex = 4;
@@ -100,7 +83,7 @@
             // PbSalir
             // 
             this.PbSalir.Image = ((System.Drawing.Image)(resources.GetObject("PbSalir.Image")));
-            this.PbSalir.Location = new System.Drawing.Point(227, 302);
+            this.PbSalir.Location = new System.Drawing.Point(209, 298);
             this.PbSalir.Name = "PbSalir";
             this.PbSalir.Size = new System.Drawing.Size(50, 53);
             this.PbSalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -109,22 +92,10 @@
             this.PbSalir.Visible = false;
             this.PbSalir.Click += new System.EventHandler(this.PbSalir_Click);
             // 
-            // PbMenu
-            // 
-            this.PbMenu.Image = ((System.Drawing.Image)(resources.GetObject("PbMenu.Image")));
-            this.PbMenu.Location = new System.Drawing.Point(227, 371);
-            this.PbMenu.Name = "PbMenu";
-            this.PbMenu.Size = new System.Drawing.Size(50, 53);
-            this.PbMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PbMenu.TabIndex = 8;
-            this.PbMenu.TabStop = false;
-            this.PbMenu.Visible = false;
-            this.PbMenu.Click += new System.EventHandler(this.PbMenu_Click);
-            // 
             // PbRean
             // 
             this.PbRean.Image = ((System.Drawing.Image)(resources.GetObject("PbRean.Image")));
-            this.PbRean.Location = new System.Drawing.Point(227, 169);
+            this.PbRean.Location = new System.Drawing.Point(209, 165);
             this.PbRean.Name = "PbRean";
             this.PbRean.Size = new System.Drawing.Size(50, 53);
             this.PbRean.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -138,7 +109,7 @@
             this.lbControles.AutoSize = true;
             this.lbControles.Font = new System.Drawing.Font("Monocraft", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbControles.ForeColor = System.Drawing.Color.White;
-            this.lbControles.Location = new System.Drawing.Point(283, 247);
+            this.lbControles.Location = new System.Drawing.Point(265, 243);
             this.lbControles.Name = "lbControles";
             this.lbControles.Size = new System.Drawing.Size(147, 28);
             this.lbControles.TabIndex = 2;
@@ -150,7 +121,7 @@
             // PbReini
             // 
             this.PbReini.Image = ((System.Drawing.Image)(resources.GetObject("PbReini.Image")));
-            this.PbReini.Location = new System.Drawing.Point(227, 235);
+            this.PbReini.Location = new System.Drawing.Point(209, 231);
             this.PbReini.Name = "PbReini";
             this.PbReini.Size = new System.Drawing.Size(50, 53);
             this.PbReini.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -164,13 +135,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
-            this.ClientSize = new System.Drawing.Size(708, 534);
+            this.ClientSize = new System.Drawing.Size(667, 409);
             this.Controls.Add(this.PbRean);
             this.Controls.Add(this.PbReini);
-            this.Controls.Add(this.PbMenu);
             this.Controls.Add(this.PbSalir);
             this.Controls.Add(this.lbSalirAplicacion);
-            this.Controls.Add(this.lbSalirMenu);
             this.Controls.Add(this.lbControles);
             this.Controls.Add(this.lbIniciarPingPong);
             this.Controls.Add(this.label1);
@@ -183,7 +152,6 @@
             this.Text = "PingPong";
             this.Load += new System.EventHandler(this.PingPongMenuP_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PbSalir)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbRean)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbReini)).EndInit();
             this.ResumeLayout(false);
@@ -195,10 +163,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbIniciarPingPong;
-        private System.Windows.Forms.Label lbSalirMenu;
         private System.Windows.Forms.Label lbSalirAplicacion;
         private System.Windows.Forms.PictureBox PbSalir;
-        private System.Windows.Forms.PictureBox PbMenu;
         private System.Windows.Forms.PictureBox PbRean;
         private System.Windows.Forms.Label lbControles;
         private System.Windows.Forms.PictureBox PbReini;

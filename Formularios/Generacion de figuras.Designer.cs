@@ -44,6 +44,7 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnCambiarColor = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.brnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -197,7 +198,7 @@
             this.btnCambiarColor.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCambiarColor.Location = new System.Drawing.Point(34, 441);
             this.btnCambiarColor.Name = "btnCambiarColor";
-            this.btnCambiarColor.Size = new System.Drawing.Size(439, 45);
+            this.btnCambiarColor.Size = new System.Drawing.Size(209, 45);
             this.btnCambiarColor.TabIndex = 23;
             this.btnCambiarColor.Text = "Crear figura";
             this.btnCambiarColor.UseVisualStyleBackColor = false;
@@ -214,12 +215,26 @@
             this.label1.Text = "________________________________________________";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // brnRegresar
+            // 
+            this.brnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(32)))), ((int)(((byte)(87)))));
+            this.brnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.brnRegresar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.brnRegresar.Location = new System.Drawing.Point(259, 441);
+            this.brnRegresar.Name = "brnRegresar";
+            this.brnRegresar.Size = new System.Drawing.Size(209, 45);
+            this.brnRegresar.TabIndex = 25;
+            this.brnRegresar.Text = "Regresar";
+            this.brnRegresar.UseVisualStyleBackColor = false;
+            this.brnRegresar.Click += new System.EventHandler(this.brnRegresar_Click);
+            // 
             // GeneracionFiguras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(523, 512);
+            this.Controls.Add(this.brnRegresar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCambiarColor);
             this.Controls.Add(this.btnCrearCruz);
@@ -268,5 +283,6 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Button btnCambiarColor;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button brnRegresar;
     }
 }

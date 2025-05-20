@@ -183,6 +183,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
             // Lógica para abrir el juego de ping pong
             var ventanaPingPong = new PingPongMenuP();
+            this.Hide();
             ventanaPingPong.Show();
         }
 
@@ -196,6 +197,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3
         {
             // Lógica para abrir el formulario de generación de figuras
             var ventanaFiguras = new GeneracionFiguras();
+            this.Hide();
             ventanaFiguras.Show();
         }
     }
