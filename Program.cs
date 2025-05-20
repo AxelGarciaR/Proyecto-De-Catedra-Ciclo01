@@ -16,7 +16,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PingPongMenuP());
+            Application.Run(new MenuPrincipal());
         }
     }
 }

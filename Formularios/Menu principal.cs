@@ -28,18 +28,14 @@ namespace PingPong_Generacion_de_figuras_Grupo3
         {
             opcioneslabels = new Label[]
             {
-                lbGeneracion, lbJugarPingPong, lbCerrarPrograma, lbAyuda
+                lbGeneracion, lbJugarPingPong, lbCerrarPrograma, 
             };
 
             opcionesIndicadores = new PictureBox[]
             {
-                pbSelect1, pbSelect2, pbSelect3, pbSelect4
+                pbSelect1, pbSelect2, pbSelect3, 
             };
 
-            // Oculta todo menos lbStart
-            foreach (var label in opcioneslabels) label.Visible = false;
-            foreach (var pb in opcionesIndicadores) pb.Visible = false;
-            lblStart.Visible = true;
         }
 
         private void MenuPrincipal_KeyDown(object sender, KeyEventArgs e)
@@ -136,12 +132,12 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
         private void lbAyuda_MouseHover(object sender, EventArgs e)
         {
-            pbSelect4.Visible = true;
+            
         }
 
         private void lbAyuda_MouseLeave(object sender, EventArgs e)
         {
-            pbSelect4.Visible = false;
+           
         }
 
         // ==== Clicks en los PictureBox ====
@@ -176,24 +172,27 @@ namespace PingPong_Generacion_de_figuras_Grupo3
 
         private void lbAyuda_Click(object sender, EventArgs e)
         {
-            OpcionesProyecto opciones = new OpcionesProyecto();
-            this.Hide();
-            opciones.Show();
+           
         }
 
         private void lbJugarPingPong_Click(object sender, EventArgs e)
         {
-
+            // Lógica para abrir el juego de ping pong
+            var ventanaPingPong = new PingPongMenuP();
+            ventanaPingPong.Show();
         }
 
         private void lbCerrarPrograma_Click(object sender, EventArgs e)
         {
-
+            // Cerrar la aplicación
+            Application.Exit();
         }
 
         private void lbGeneracion_Click(object sender, EventArgs e)
         {
-
+            // Lógica para abrir el formulario de generación de figuras
+            var ventanaFiguras = new GeneracionFiguras();
+            ventanaFiguras.Show();
         }
     }
 
