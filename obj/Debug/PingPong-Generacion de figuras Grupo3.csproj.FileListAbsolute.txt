@@ -30,7 +30,6 @@ D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De
 D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\bin\Debug\PingPong-Generacion de figuras Grupo3.exe
 D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\bin\Debug\PingPong-Generacion de figuras Grupo3.pdb
 D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.csproj.AssemblyReference.cache
-D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.CrearNuevaFigura.resources
 D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.PingPong.resources
 D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.MenuPrincipal.resources
 D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.GeneracionFiguras.resources
@@ -56,3 +55,24 @@ C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generaci
 C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\MatrizLED.CrearNuevaFigura.resources
 C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.PingPongMenuP.resources
 C:\Users\marlo\Downloads\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.Formularios.PingPongGame.resources
+D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\MatrizLED.CrearNuevaFigura.resources
+D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.PingPongMenuP.resources
+D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.Formularios.PingPongGame.resources
+D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.Formularios.OpcionesProyecto.resources
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\bin\Debug\PingPong-Generacion de figuras Grupo3.exe.config
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\bin\Debug\PingPong-Generacion de figuras Grupo3.exe
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\bin\Debug\PingPong-Generacion de figuras Grupo3.pdb
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.csproj.AssemblyReference.cache
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\MatrizLED.CrearNuevaFigura.resources
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.Formularios.OpcionesProyecto.resources
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.PingPongMenuP.resources
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.Formularios.PingPongGame.resources
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.PingPong.resources
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.MenuPrincipal.resources
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.GeneracionFiguras.resources
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.Properties.Resources.resources
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.RepresentacionFigura.resources
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.csproj.GenerateResource.cache
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.csproj.CoreCompileInputs.cache
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.exe
+C:\Users\sosa\Downloads\Proyecto-De-Catedra-Ciclo01\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.pdb

@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-      #region Código generado por el Diseñador de Windows Forms
+        #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
         /// Método necesario para admitir el Diseñador. No se puede modificar
@@ -380,5 +380,4 @@
 }
 
 
-    
 
