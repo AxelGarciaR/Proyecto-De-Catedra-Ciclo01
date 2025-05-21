@@ -34,7 +34,6 @@ D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De
 D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.MenuPrincipal.resources
 D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.GeneracionFiguras.resources
 D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.Properties.Resources.resources
-D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong_Generacion_de_figuras_Grupo3.RepresentacionFigura.resources
 D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.csproj.GenerateResource.cache
 D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.csproj.CoreCompileInputs.cache
 D:\Uni\Primer Semestre\Programacion Estructurada\Proyecto de catedra\Proyecto-De-Catedra-Ciclo01\obj\Debug\PingPong-Generacion de figuras Grupo3.exe
