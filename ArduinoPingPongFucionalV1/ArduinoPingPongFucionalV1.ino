@@ -12,7 +12,7 @@ void setup() {
   Serial.begin(9600);
   while (!Serial); // Espera a que el puerto serial esté disponible
   
-  lc.shutdown(0, true); // Desactiva el modo de ahorro de energía
+  lc.shutdown(0, false); // Desactiva el modo de ahorro de energía
   lc.setIntensity(0, 15); // Brillo máximo inicial (puedes cambiarlo si quieres un valor por defecto diferente)
   lc.clearDisplay(0);    // Limpia la matriz
   

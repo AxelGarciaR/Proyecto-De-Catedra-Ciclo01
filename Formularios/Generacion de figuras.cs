@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MatrizLED;
 
 namespace PingPong_Generacion_de_figuras_Grupo3
 {
@@ -136,6 +137,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3
                  "00011000",
                  "00011000"
             };
+
             EnviarFiguraALedMatrix(crearcruz, false);
         }
 
@@ -178,6 +180,14 @@ namespace PingPong_Generacion_de_figuras_Grupo3
             MenuPrincipal menu = new MenuPrincipal();
             this.Close();
             menu.Show();
+        }
+
+        private void btnCambiarColor_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CrearNuevaFigura crear = new CrearNuevaFigura();
+            crear.Show();
+
         }
     }
 }

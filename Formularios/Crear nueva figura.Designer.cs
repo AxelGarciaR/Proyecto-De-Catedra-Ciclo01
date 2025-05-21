@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnCrearFigura = new System.Windows.Forms.Button();
             this.btnLimpiarSeleccion = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -96,9 +95,8 @@
             this.check_0_2 = new System.Windows.Forms.CheckBox();
             this.check_0_1 = new System.Windows.Forms.CheckBox();
             this.check_0_0 = new System.Windows.Forms.CheckBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCrearFigura
@@ -1304,12 +1302,26 @@
             this.check_0_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.check_0_0.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Monocraft", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Location = new System.Drawing.Point(22, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 36);
+            this.label1.TabIndex = 259;
+            this.label1.Text = "<-";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // CrearNuevaFigura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(40)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(443, 478);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnLimpiarSeleccion);
             this.Controls.Add(this.btnCrearFigura);
@@ -1317,12 +1329,13 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CrearNuevaFigura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Crear nueva figura";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CrearNuevaFigura_FormClosing);
             this.Load += new System.EventHandler(this.CrearNuevaFigura_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1394,6 +1407,6 @@
         private System.Windows.Forms.CheckBox check_2_4;
         private System.Windows.Forms.CheckBox check_2_3;
         private System.Windows.Forms.CheckBox check_2_2;
-        private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Label label1;
     }
 }

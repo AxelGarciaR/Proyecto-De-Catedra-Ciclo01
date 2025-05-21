@@ -202,6 +202,7 @@
             this.btnCambiarColor.TabIndex = 23;
             this.btnCambiarColor.Text = "Crear figura";
             this.btnCambiarColor.UseVisualStyleBackColor = false;
+            this.btnCambiarColor.Click += new System.EventHandler(this.btnCambiarColor_Click);
             // 
             // label1
             // 
@@ -253,6 +254,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GeneracionFiguras";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Generacion de figuras";
             this.Load += new System.EventHandler(this.GeneracionFiguras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

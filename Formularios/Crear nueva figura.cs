@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO.Ports;
 using System.Windows.Forms;
+using PingPong_Generacion_de_figuras_Grupo3;
 
 namespace MatrizLED
 {
@@ -50,8 +51,8 @@ namespace MatrizLED
             // obtiene el checkbox seleccionado con click
             CheckBox clickedCheckBox = (CheckBox)sender;
 
-            // cambia el estado del checkbox, lo marca o desmarca con el click
-            clickedCheckBox.Checked = !clickedCheckBox.Checked;
+            // El estado Checked del CheckBox ya se actualiza automáticamente con el evento click.
+            // Por lo tanto, solo necesitamos actualizar el color basándonos en su estado actual.
 
             // cambia el color de los seleccionados como indicador visual
             if (clickedCheckBox.Checked)
@@ -140,7 +141,7 @@ namespace MatrizLED
             {
                 // *** MUY IMPORTANTE: CAMBIA "COM3" por el puerto COM de tu Arduino ***
                 // El BaudRate (9600) debe coincidir con el configurado en tu sketch de Arduino.
-                arduinoPort = new SerialPort("COM3", 9600);
+                arduinoPort = new SerialPort("COM5", 9600);
                 arduinoPort.Open(); // Intenta abrir el puerto.
                 Console.WriteLine($"Puerto serial {arduinoPort.PortName} abierto con éxito."); // Mensaje para depuración
             }
@@ -162,6 +163,13 @@ namespace MatrizLED
                 arduinoPort.Dispose(); // Libera los recursos asociados al puerto.
                 Console.WriteLine("Puerto serial cerrado."); // Mensaje para depuración
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            GeneracionFiguras generacion = new GeneracionFiguras();
+            generacion.Show();
+            this.Close();
         }
     }
 }
