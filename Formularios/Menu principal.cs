@@ -88,7 +88,7 @@ namespace PingPong_Generacion_de_figuras_Grupo3
                     this.Hide();
                     break;
                 case 1:
-                    // new JuegoPingPong().Show();
+                    new PingPongMenuP().Show();
                     this.Hide();
                     break;
                 case 2:
