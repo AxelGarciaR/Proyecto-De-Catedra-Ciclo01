@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("PingPong-Generacion de figuras Grupo3")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Representacion de figuras y juego de ping pong usando aruduino uno y un modulo de matris led")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("UDB")]
 [assembly: AssemblyProduct("PingPong-Generacion de figuras Grupo3")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("UDB")]
 [assembly: AssemblyCulture("")]
 
 // Si establece ComVisible en false, los tipos de este ensamblado no estarán visibles 

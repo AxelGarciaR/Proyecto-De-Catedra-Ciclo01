@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="PingPong-Generacion de figuras Grupo3.exe" version="1.0.0.0" publicKeyToken="592d09c712dafaa8" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="147340.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="PingPong-Generacion de figuras Grupo3" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="PingPong-Generacion de figuras Grupo3.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opciones del manifiesto de Control de cuentas de usuario
+          Si quiere cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el
+          nodo requestedExecutionLevel por alguno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si desea usar la virtualización de archivos y del Registro para la
+         compatibilidad con versiones anteriores, elimine el nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PingPong-Generacion de figuras Grupo3.exe" size="359392">
+      <assemblyIdentity name="PingPong-Generacion de figuras Grupo3" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ehVJ7Jp78cM+3WiUNcl2K9dFxnGETaEsYutbLYXXszs=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="147340.ico" size="10373">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>x9vQcQ1UqWkl9/t3I6Lmnel+SQIzVaQmSsJO3+2rQ6Y=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Imagenes\PressStartImage.gif" size="13977">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>TnQAjK9LwUSoYd2m2ZXVnAUMSo1RvXL7D2SmVM0cYU8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Imagenes\SelectAnimation.gif" size="5404">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>3eG9gNb4GRwxH9xmMRdk1+EOcm/QEjmRpVTGqyfOE/M=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PingPong-Generacion de figuras Grupo3.exe.config" size="189">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>R+Wg8QGvQVHX8T0ta/qbhH1bXkqY0fRnS3wBV3J0bN8=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=DESKTOP-SIGK6BR\axelg" issuerKeyHash="5f4e2135733b18e745e65aabf9118660761eda37" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>VygqxN8H79NsTBdJw7Vb9rlFjMxdIzoGcowrQpmKRXY=</DigestValue></Reference></SignedInfo><SignatureValue>BuIw/OrLhnwj6iylW6mSm3pwZuYqQqtIZxhf8WT8JyiXBywgACg/gh1vaylUnTBv+dw5/43U076aRUbg6S/q+FNAiXEb8qXT7p8gHcp3xIWpsCoHxNDyim+UwYoqJ3Hbhc2jfqbVlLpm5RWPTYpd/+6gky0vwIP5mQXDp8fskb0=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>6JrlW7cDxvH2GrB87VgMhdkZgNKz+fEeICNfhGHn+gBtFu72k4AGk4o/wXhq58RjRqquTpAWM8GYtI+495fKheazz2XDqdL+GzK5hGJHetiQdaoJkCXnIzpiYxlabDT8vb3+0/iW+SesRXVqmLNb5yGvGIuXt/UMvPK69L/QrCE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="76458a99422b8c72063a235dcc8c45b9f65bb5c349174c6cd3ef07dfc42a2857" Description="" Url=""><as:assemblyIdentity name="PingPong-Generacion de figuras Grupo3.exe" version="1.0.0.0" publicKeyToken="592d09c712dafaa8" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-SIGK6BR\axelg</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>YPk5Zxi5TdAahEfHROJdq3aiP6TlMEwKCK+YnOxecgc=</DigestValue></Reference></SignedInfo><SignatureValue>T0pI/0ep7RPu637/VgJ3KwepeKXUjoqXEN1zgulvRSJBKp0xOyEORA2xOGCYtg6E65OX4ivr+7iQSoRmpvVhGaz4BwWRMENdX8m5SqVCWR09ABx8tnt1UBsGinqlgmFFPXp71cjwx+8StjI6FhLLoz7x0tWQkWxPsSIL99B8v4k=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>6JrlW7cDxvH2GrB87VgMhdkZgNKz+fEeICNfhGHn+gBtFu72k4AGk4o/wXhq58RjRqquTpAWM8GYtI+495fKheazz2XDqdL+GzK5hGJHetiQdaoJkCXnIzpiYxlabDT8vb3+0/iW+SesRXVqmLNb5yGvGIuXt/UMvPK69L/QrCE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQGHegQvkwLalM7dkkuMa87zANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAFMASQBHAEsANgBCAFIAXABhAHgAZQBsAGcwHhcNMjUwNTI3MTYwNDA1WhcNMjYwNTI3MjIwNDA1WjA1MTMwMQYDVQQDHioARABFAFMASwBUAE8AUAAtAFMASQBHAEsANgBCAFIAXABhAHgAZQBsAGcwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAOia5Vu3A8bx9hqwfO1YDIXZGYDSs/nxHiAjX4Rh5/oAbRbu9pOABpOKP8F4aufEY0aqrk6QFjPBmLSPuPeXyoXms89lw6nS/hsyuYRiR3rYkHWqCZAl5yM6YmMZWmw0/L29/tP4lvknrEV1apizW+chrxiLl7f1DLzyuvS/0KwhAgMBAAEwDQYJKoZIhvcNAQELBQADgYEA5DW0I/FK1FW0Uc2onVOara2BN1Dg/LskS9m4Dx35kfM/RUrDEAcAeYCTIFNgoqjWyCI+MatAaLfx8hbd6tsZXdLem1m2qBzYpIdbdt8eCzPHmwufNtkve3o54qcAme54p09iEScF2HZzjUP2FzU1zL+wvgr1oMpYeAgoJiSCJlo=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
