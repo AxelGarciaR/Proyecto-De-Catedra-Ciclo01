@@ -59,11 +59,11 @@
             // lbGeneracion
             // 
             this.lbGeneracion.AutoSize = true;
-            this.lbGeneracion.Font = new System.Drawing.Font("Monocraft", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbGeneracion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGeneracion.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lbGeneracion.Location = new System.Drawing.Point(200, 209);
             this.lbGeneracion.Name = "lbGeneracion";
-            this.lbGeneracion.Size = new System.Drawing.Size(241, 22);
+            this.lbGeneracion.Size = new System.Drawing.Size(166, 20);
             this.lbGeneracion.TabIndex = 1;
             this.lbGeneracion.Text = "Generacion de figuras";
             this.lbGeneracion.Click += new System.EventHandler(this.lbGeneracion_Click);
@@ -73,11 +73,11 @@
             // lbJugarPingPong
             // 
             this.lbJugarPingPong.AutoSize = true;
-            this.lbJugarPingPong.Font = new System.Drawing.Font("Monocraft", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbJugarPingPong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbJugarPingPong.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lbJugarPingPong.Location = new System.Drawing.Point(231, 277);
             this.lbJugarPingPong.Name = "lbJugarPingPong";
-            this.lbJugarPingPong.Size = new System.Drawing.Size(175, 22);
+            this.lbJugarPingPong.Size = new System.Drawing.Size(125, 20);
             this.lbJugarPingPong.TabIndex = 2;
             this.lbJugarPingPong.Text = "Jugar Ping Pong";
             this.lbJugarPingPong.Click += new System.EventHandler(this.lbJugarPingPong_Click);
@@ -87,11 +87,11 @@
             // lbCerrarPrograma
             // 
             this.lbCerrarPrograma.AutoSize = true;
-            this.lbCerrarPrograma.Font = new System.Drawing.Font("Monocraft", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCerrarPrograma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCerrarPrograma.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lbCerrarPrograma.Location = new System.Drawing.Point(231, 347);
             this.lbCerrarPrograma.Name = "lbCerrarPrograma";
-            this.lbCerrarPrograma.Size = new System.Drawing.Size(175, 22);
+            this.lbCerrarPrograma.Size = new System.Drawing.Size(126, 20);
             this.lbCerrarPrograma.TabIndex = 3;
             this.lbCerrarPrograma.Text = "Cerrar Programa";
             this.lbCerrarPrograma.Click += new System.EventHandler(this.lbCerrarPrograma_Click);
@@ -135,11 +135,11 @@
             // lbAyuda
             // 
             this.lbAyuda.AutoSize = true;
-            this.lbAyuda.Font = new System.Drawing.Font("Monocraft", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAyuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAyuda.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.lbAyuda.Location = new System.Drawing.Point(279, 415);
             this.lbAyuda.Name = "lbAyuda";
-            this.lbAyuda.Size = new System.Drawing.Size(98, 22);
+            this.lbAyuda.Size = new System.Drawing.Size(76, 20);
             this.lbAyuda.TabIndex = 7;
             this.lbAyuda.Text = "Opciones";
             this.lbAyuda.Click += new System.EventHandler(this.lbAyuda_Click);
@@ -173,6 +173,7 @@
             this.Controls.Add(this.lbGeneracion);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MenuPrincipal";
